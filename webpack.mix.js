@@ -21,16 +21,13 @@ mix.copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'public
 mix.extract([
   'bootstrap', 'jquery', 'jquery-ui', '@popperjs/core',
   '@fortawesome/fontawesome-free', '@rwap/jquery-ui-touch-punch',
-  'select2', 'select2-bootstrap-5-theme',
-  'moment', 'daterangepicker', 'datatables.net-dt',  
-  'chart.js'
+  'select2', 'select2-bootstrap-5-theme', 'daterangepicker'
 ])
 
 mix.autoload({
   jquery: ['jquery', 'jQuery', '$', 'window.jQuery'],
   Popper: ['popper', 'Popper', 'popper.js'],
-  popper: ['Popper', 'popper.js'],
-  moment: ['moment']
+  popper: ['Popper', 'popper.js']  
 });
 
 var sass_debug = process.env.SASS_DEBUG;
