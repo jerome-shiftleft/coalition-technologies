@@ -4,8 +4,8 @@
 ])
 
 @section('meta-dynamic')
-  <title>Dashboard</title>
-  <meta name="description" content="Dashboard">
+  <title>Task Manager</title>
+  <meta name="description" content="Task Manager">
 @endsection
 
 @push('page-head-scripts')
@@ -17,7 +17,7 @@
 
     <div class="content">         
 
-      <x-lorem-ipsum />
+      
 
     </div><!-- /.content -->
 

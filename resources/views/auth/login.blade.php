@@ -13,10 +13,6 @@
 
 @section('content')
 
-  <a id="login-logo" class="logo-link" href="{{ url('/') }}">
-    <img class="logo" src="{{ asset('images/sit-logo-white.webp') }}" alt="">
-  </a><!--/.login-logo-->
-
   <div id="login-wrap">
 
     {{-- <div class="auth-status">{{ session('status') }}</div> --}}
