@@ -1,11 +1,9 @@
-# Laravel 8 Starter Template
-
-This repository is a Laravel 8 starter template designed to streamline the setup process for new Laravel projects.
+# Task Manager
 
 ## Installation
 
 - download/clone this repository
-- **`cp .env.example .env`**
+- Copy `.env.example` **`cp .env.example .env`**
 - update .env **`APP_URL`** to match your virtual host url.<br>
 This is **required** if you want to use **browsersync**
 - **`composer install`**
