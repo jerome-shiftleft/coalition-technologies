@@ -32,11 +32,6 @@ If **`BROWSER_SYNC=true`** in .env, it will automatically reloads the browser af
 - public/js/app.js.LICENSE.txt
 - public/js/vendor.js.LICENSE.txt
 
-## WebP
-**npm run webp** to generate webp version copy of images in the public/images directory.<br><br>
-WebP is a modern image format that provides superior lossless and lossy compression for images on the web.<br>
-Using WebP, webmasters and web developers can create smaller, richer images that make the web faster.
-
 ## Additional Packages Installed
 
 ### Composer Packages
@@ -53,12 +48,8 @@ Using WebP, webmasters and web developers can create smaller, richer images that
 - [@popperjs/core](https://www.npmjs.com/package/@popperjs/core)
 - [jquery](https://www.npmjs.com/package/jquery)
 - [jquery-ui](https://www.npmjs.com/package/jquery-ui)
-- [chart.js](https://www.npmjs.com/package/chart.js)
-- [chartjs-gauge](https://www.npmjs.com/package/chartjs-gauge)
-- [datatables.net-dt](https://www.npmjs.com/package/datatables.net-dt)
 - [moment](https://www.npmjs.com/package/moment)
 - [select2](https://www.npmjs.com/package/select2)
-- [sweetalert2](https://www.npmjs.com/package/sweetalert2)
 
 ## License
 
