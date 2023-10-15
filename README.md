@@ -3,7 +3,7 @@
 ## Installation
 
 - download/clone this repository
-- Copy `.env.example` **`cp .env.example .env`**
+- Copy .env.example **`cp .env.example .env`**
 - update .env **`APP_URL`** to match your virtual host url.<br>
 This is **required** if you want to use **browsersync**
 - **`composer install`**
