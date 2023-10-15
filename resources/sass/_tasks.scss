@@ -1,0 +1,53 @@
+#task-manager {
+  width: 100%;
+  max-width: 290px;
+  margin: 0 auto;
+}
+
+#select-project {
+  max-width: 290px;
+}
+
+#task-list {
+  margin-top: 10px;
+  max-width: 290px;
+}
+
+.task {
+  padding: 10px;
+  border: 1px solid $default-border-color;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.task-header {
+  @extend .flex-wrap;
+  justify-content: space-between;
+}
+
+.task-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.task-header-actions {
+  &, a {
+    color: $default-font-color;
+  }
+}
+
+.task-content {
+  display: none;
+}
+
+.dashboard.dark {
+  .task-header-actions {
+    &, a {
+      color: $light-font-color;
+    }
+    a {
+      margin: 0 5px;
+    }
+  }
+}
