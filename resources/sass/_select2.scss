@@ -1,4 +1,4 @@
-.bs-select2 + .select2 {
+.search-select + .select2 {
   > .selection {
     .select2-selection {
       background-color: initial;
@@ -8,7 +8,7 @@
 
 .dashboard.dark {
 
-  .bs-select2 + .select2 {
+  .search-select + .select2 {
     > .selection {
       .select2-selection {
         .select2-selection__rendered {

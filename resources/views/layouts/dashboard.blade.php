@@ -19,7 +19,7 @@
 </head>
 
 <?php
-$theme = '';
+$theme = 'dark';
 if (Auth::user()) {
   $theme = Auth::user()->theme;
 } 

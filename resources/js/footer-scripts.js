@@ -1,8 +1,5 @@
 $(function () {
-  console.log('loading footer scripts...');
-
-  var currentDate = moment().format('YYYY-MM-DD');
-  console.log('current date: ', currentDate);
+  console.log('loading footer scripts...');  
 
   var base_url = "{{ url('/') }}";
   console.log('base url: ' + base_url);
