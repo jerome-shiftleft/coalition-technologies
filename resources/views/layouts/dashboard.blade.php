@@ -35,8 +35,7 @@ if (Auth::user()) {
   </div><!-- /.page-wrap -->
 
   @livewireScripts
-  @include('layouts.sections.footer-scripts')
- 
+  @include('layouts.sections.footer-scripts') 
 
   @stack('scripts')
 

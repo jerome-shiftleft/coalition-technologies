@@ -2,7 +2,7 @@
 
   <div id="select-project-wrap">
 
-    <select wire:model="project_id" name="select_project" id="select-project" class="form-select search-select">
+    <select data-pharaonic="select2" data-component-id="{{ $this->id }}" wire:model="project_id" name="select_project" id="select-project" class="form-select search-select">
       <option></option>
       @foreach ($projects as $project)
         <option value="{{ $project->id }}">{{ $project->title }}</option>
