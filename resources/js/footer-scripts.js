@@ -47,7 +47,7 @@ $(function () {
 
   } // end of if ($('.dashboard').length)
 
-  $('.bs-select2').select2({
+  $('.search-select').select2({
     theme: 'bootstrap-5',
     placeholder: 'Select'
   });

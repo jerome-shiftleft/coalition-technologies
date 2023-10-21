@@ -20,7 +20,7 @@
 
         <select name="select_project" id="select-project" class="form-select search-select">
           <option></option>
-          <option value="project-1">Project 1</option>
+          <option value="project-1" selected>Project 1</option>
           <option value="project-2">Project 2</option>
           <option value="project-3">Project 3</option>
         </select>
@@ -31,11 +31,7 @@
 
             <div class="task-header">
               <h3 class="task-title">Task 1</h3>
-              <div class="task-header-actions">
-                <a href="#"><i class="fa-solid fa-angle-down"></i></a>
-                <a href="#"><i class="fa-solid fa-up-down"></i></a>
-                <a href="#"><i class="fa-solid fa-xmark"></i></a>
-              </div><!-- /.task-header-actions -->
+              <x-task-actions />
             </div><!-- /.task-header -->
 
             <div class="task-content">
@@ -48,10 +44,7 @@
 
             <div class="task-header">
               <h3 class="task-title">Task 2</h3>
-              <div class="task-header-actions">
-                <a href="#"><i class="fa-solid fa-angle-down"></i></a>
-                <a href="#"><i class="fa-solid fa-up-down"></i></a>
-                <a href="#"><i class="fa-solid fa-xmark"></i></a>
+              <x-task-actions />
               </div><!-- /.task-header-actions -->
             </div><!-- /.task-header -->
 
@@ -65,11 +58,7 @@
 
             <div class="task-header">
               <h3 class="task-title">Task 3</h3>
-              <div class="task-header-actions">
-                <a href="#"><i class="fa-solid fa-angle-down"></i></a>
-                <a href="#"><i class="fa-solid fa-up-down"></i></a>
-                <a href="#"><i class="fa-solid fa-xmark"></i></a>
-              </div><!-- /.task-header-actions -->
+              <x-task-actions />
             </div><!-- /.task-header -->
 
             <div class="task-content">
@@ -92,7 +81,7 @@
     $(function() {
       $('#select-project').select2({
         theme: 'bootstrap-5',
-        placeholder: 'Select Project',
+        placeholder: 'Select Project',        
         allowClear: true
       });
     }); // end of initialize jquery
