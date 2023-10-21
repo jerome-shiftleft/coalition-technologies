@@ -11,7 +11,7 @@
 
   </div><!-- /#select-project-wrap -->
 
-  <span>Project ID: {{ $project_id }}</span>
+  <div>Project ID: {{ $project_id }}</div>
 
   <div id="task-list">
 
