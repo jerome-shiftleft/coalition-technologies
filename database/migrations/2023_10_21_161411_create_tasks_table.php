@@ -20,8 +20,8 @@ class CreateTasksTable extends Migration
             $table->foreignId('project_id')->constrained('projects');
             $table->timestamps();
             $table->string('title');
-            $table->text('description');
-            $table->smallInteger('order');
+            $table->text('description')->nullable();
+            $table->smallInteger('order')->default(0);
         });
     }
 
