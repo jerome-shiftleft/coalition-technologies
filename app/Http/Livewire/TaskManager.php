@@ -20,17 +20,15 @@ class TaskManager extends Component
   }
 
   public function updatedProjectId() {    
-    $this->list_task($this->project_id);
+    $this->list_task($this->project_id);    
   }
 
   public function list_task($project_id) {    
     $tasks = Task::where('project_id', $project_id)->get();
     $this->tasks = $tasks;
-  }
-
-  public function selectProject() {    
-    $this->emit('selectProjectExecuted'); // Emit an event to execute JavaScript function
-  }
+    // Emit an event to execute JavaScript function
+    $this->emit('selectProject'); 
+  }  
 
   public function render()
   {

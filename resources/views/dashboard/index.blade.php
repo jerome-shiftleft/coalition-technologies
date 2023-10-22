@@ -25,7 +25,7 @@
 
 @push('scripts')
   <script>
-    Livewire.on('selectProjectExecuted', () => {      
+    Livewire.on('selectProject', () => {      
       swap_tasks();
     });
   </script>

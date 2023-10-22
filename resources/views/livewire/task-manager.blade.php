@@ -2,7 +2,7 @@
 
   <div id="select-project-wrap">
 
-    <select wire:change="selectProject" wire:model="project_id" name="select_project" id="select-project"
+    <select wire:model="project_id" name="select_project" id="select-project"
       class="form-select search-select">
       <option value="">Select Project</option>
       @foreach ($projects as $project)
