@@ -27,15 +27,14 @@
   <script>
     $(function() {
 
-      swap_tasks();
-      
-      $('#select-project').select2({
-        theme: 'bootstrap-5',
-        placeholder: 'Select Project',        
-        allowClear: true
-      });      
+      swap_tasks();      
 
       $('.expand-task').on('click', function() {
+        console.log('toggle task desc');
+        $(this).closest('.task-header').next('.task-content').toggle();
+      });
+
+      $(document).on('click', '.expand-tasks', function() {
         $(this).closest('.task-header').next('.task-content').toggle();
       });
 
