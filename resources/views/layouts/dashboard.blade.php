@@ -38,9 +38,7 @@ if (Auth::user()) {
   @livewireScripts
   @include('layouts.sections.footer-scripts')
 
-  @stack('scripts')
-
-  <script src="{{ asset('vendor/pharaonic/pharaonic.select2.min.js') }}"></script>
+  @stack('scripts')  
 
 </body>
 
