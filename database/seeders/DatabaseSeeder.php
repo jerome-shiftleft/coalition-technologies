@@ -18,9 +18,14 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Project::factory()
-            ->count(5)
-            ->has(Task::factory()->count(random_int(3, 5)))
-            ->create();
+            ->count(10)
+            ->create()
+            ->each(function ($project) {
+                $taskCount = rand(3, 5);
 
+                Task::factory()
+                    ->count($taskCount)
+                    ->create(['project_id' => $project->id]);
+            });
     }
 }

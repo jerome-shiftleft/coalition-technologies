@@ -4,6 +4,17 @@
   margin: 0 auto;
 }
 
+#select-project-wrap {
+  position: relative;
+}
+
+.task-preloader {
+  position: absolute;
+  left: auto;
+  right: -24px;
+  top: 6px;
+}
+
 #select-project {
   max-width: 290px;
 }
@@ -42,7 +53,7 @@
 }
 
 .task-content {
-  display: none;
+  //display: none;
 }
 
 .dashboard.dark {

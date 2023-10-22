@@ -26,6 +26,7 @@
         "@fortawesome/fontawesome-free": "^6.4.2",
         "@popperjs/core": "^2.11.8",
         "@rwap/jquery-ui-touch-punch": "^1.0.11",
+        "alpinejs": "^3.13.2",
         "bootstrap": "^5.3.1",
         "daterangepicker": "^3.1.0",
         "jquery": "^3.7.0",

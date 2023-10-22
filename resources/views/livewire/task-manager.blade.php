@@ -1,19 +1,22 @@
-<div id="task-manager" x-data="{ isExpanded: false }">
+<div id="task-manager" x-data="{ taskManager: false }">
 
   <div id="select-project-wrap">
 
     <select wire:model="project_id" name="select_project" id="select-project"
-      class="form-select form-select-sm search-select">
+      class="form-select search-select">
       <option value="">Select Project</option>
       @foreach ($projects as $project)
         <option value="{{ $project->id }}">{{ $project->title }}</option>
       @endforeach
     </select>
 
-  </div><!-- /#select-project-wrap -->
+    <div wire:loading class="task-preloader">
+      <div class="spinner-border spinner-border-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
 
-  <div>Project ID: {{ $project_id }}</div>
-  <div>{{ $select_message }}</div>
+  </div><!-- /#select-project-wrap -->  
 
   @isset($tasks)
 
@@ -26,15 +29,16 @@
             <h3 class="task-title">{{ $task->title }}</h3>
 
             <div class="task-header-actions">
-              {{-- <a href="#" x-on:click="isTaskExpanded = !isTaskExpanded"
-              data-bs-toggle="tooltip" data-bs-title="Show/Hide Task Description">
+
+              <a href="#" x-on:click="isTaskExpanded = !isTaskExpanded" data-bs-toggle="tooltip"
+                data-bs-title="Show/Hide Task Description">
                 <i class="expand-task fa-solid fa-angle-down"></i>
-              </a> --}}
-              <button x-on:click="isTaskExpanded = !isTaskExpanded" class="expand-tasks">
-                Toggle Task
-              </button>
-              {{-- <a href="#" data-bs-toggle="tooltip" data-bs-title="Reorder Task"><i class="reorder-task fa-solid fa-up-down"></i></a> --}}
-              <a href="#" data-bs-toggle="tooltip" data-bs-title="Delete Task"><i class="delete-task fa-solid fa-xmark"></i></a>
+              </a>
+
+              <a href="#" data-bs-toggle="tooltip" data-bs-title="Delete Task">
+                <i class="delete-task fa-solid fa-xmark"></i>
+              </a>
+
             </div><!-- /.task-header-actions -->
 
           </div><!-- /.task-header -->
@@ -49,14 +53,7 @@
 
     <script>
       $(function() {
-  
-        swap_tasks();      
-  
-        $('.expand-task').on('click', function() {
-          console.log('toggle task desc');
-          $(this).closest('.task-header').next('.task-content').toggle();
-        });
-  
+        swap_tasks();
       }); // end of initialize jquery
     </script>
 
