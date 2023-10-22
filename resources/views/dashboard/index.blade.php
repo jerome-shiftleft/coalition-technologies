@@ -25,8 +25,25 @@
 
 @push('scripts')
   <script>
-    Livewire.on('selectProject', () => {      
+    Livewire.on('selectProject', () => {
       swap_tasks();
     });
+
+    $(function() { // initialize jquery
+      $('#select-project').select2({
+        theme: 'bootstrap-5',
+        placeholder: 'Select Project',
+        allowClear: true
+      });
+
+      $('#select-project').on('change', function(e) {
+        console.log('select change!');        
+        var select_project_value = parseInt(e.target.value);
+        console.log('select value: ', select_project_value);
+
+        Livewire.emit('update_project_id_handler', select_project_value);
+
+      });
+    }); // end of initialize jquery
   </script>
 @endpush

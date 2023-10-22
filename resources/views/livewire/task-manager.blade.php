@@ -1,14 +1,17 @@
 <div id="task-manager">
 
-  <div id="select-project-wrap">
+  <div wire:ignore.self id="select-project-wrap">
 
-    <select wire:model="project_id" name="select_project" id="select-project"
-      class="form-select search-select">
+    <select name="select_project" id="select-project" class="form-select search-select">
       <option value="">Select Project</option>
       @foreach ($projects as $project)
         <option value="{{ $project->id }}">{{ $project->title }}</option>
       @endforeach
     </select>
+
+    @isset($emit_message)
+      {{ $emit_message }}
+    @endisset
 
     <div wire:loading class="task-preloader">
       <div class="spinner-border spinner-border-sm" role="status">
@@ -27,5 +30,9 @@
     </div><!-- /#task-list -->
 
   @endisset
+
+  <script>
+    
+  </script>
 
 </div><!-- /#task-mananager -->
