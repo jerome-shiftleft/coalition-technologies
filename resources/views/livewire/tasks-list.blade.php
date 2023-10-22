@@ -1,26 +1,31 @@
 <div class="task" x-data="{ descExpanded: false }">
 
-    <div class="task-header">
+  <div class="task-header">
 
-      <h3 class="task-title">{{ $task->title }}</h3>
+    <h3 class="task-title">{{ $task->title }}</h3>
 
-      <div class="task-header-actions">
+    <div class="task-header-actions">
 
-        <a href="#" x-on:click="descExpanded = !descExpanded" data-bs-toggle="tooltip"
-          data-bs-title="Show/Hide Task Description">
-          <i class="expand-task fa-solid fa-angle-down"></i>
-        </a>
+      <a href="#" x-on:click="descExpanded = !descExpanded" data-bs-toggle="tooltip"
+        data-bs-title="Show/Hide Task Description">
+        <i class="expand-task fa-solid fa-angle-down"></i>
+      </a>
 
-        <a href="#" data-bs-toggle="tooltip" data-bs-title="Delete Task">
-          <i class="delete-task fa-solid fa-xmark"></i>
-        </a>
+      <a href="#" wire:click="deleteTask({{ $task->id }})" data-id="{{ $task->id }}"
+      class="delete-task-btn">
+        <i class="delete-task fa-solid fa-xmark"></i>
+      </a>
 
-      </div><!-- /.task-header-actions -->
+    </div><!-- /.task-header-actions -->
 
-    </div><!-- /.task-header -->
+  </div><!-- /.task-header -->
 
-    <div class="task-content" x-show="descExpanded" x-transition>
-      {{ $task->description }}
-    </div><!-- /.task-content -->
+  <div class="action-message">
+    {{-- {{ $delete_message }} --}}
+  </div><!-- /.action-message -->
 
-  </div><!-- /.task -->
+  <div class="task-content" x-show="descExpanded" x-transition>
+    {{ $task->description }}
+  </div><!-- /.task-content -->
+
+</div><!-- /.task -->
