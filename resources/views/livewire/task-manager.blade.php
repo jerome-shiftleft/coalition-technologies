@@ -43,7 +43,7 @@
 
           </div><!-- /.task-header -->
 
-          <div class="task-content" x-show="isTaskExpanded">
+          <div class="task-content" x-show="isTaskExpanded" x-transition>
             {{ $task->description }}
           </div><!-- /.task-content -->
 

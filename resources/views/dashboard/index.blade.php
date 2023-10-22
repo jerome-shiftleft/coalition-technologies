@@ -16,7 +16,7 @@
 
     <div class="content">
 
-      <livewire:task-manager />      
+      <livewire:task-manager />          
 
     </div><!-- /.content -->
 
@@ -25,7 +25,7 @@
 
 @push('scripts')
   <script>
-    $(function() {      
+    $(function() {
 
     }); // end of initialize jquery
   </script>
