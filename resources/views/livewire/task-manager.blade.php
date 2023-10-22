@@ -2,7 +2,7 @@
 
   <div id="select-project-wrap">
 
-    <select wire:model="project_id" name="select_project" id="select-project"
+    <select wire:change="$emit('selectProjectHandler')" wire:model="project_id" name="select_project" id="select-project"
       class="form-select search-select">
       <option value="">Select Project</option>
       @foreach ($projects as $project)
@@ -16,7 +16,9 @@
       </div>
     </div>
 
-  </div><!-- /#select-project-wrap -->  
+  </div><!-- /#select-project-wrap -->
+
+  {{ $selectProjectMessage }}
 
   @isset($tasks)
 
@@ -28,8 +30,12 @@
 
     <script>
       $(function() {
-        swap_tasks();
+        //swap_tasks();
       }); // end of initialize jquery
+    </script>
+
+    <script>
+      
     </script>
 
   @endisset

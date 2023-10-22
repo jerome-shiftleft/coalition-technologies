@@ -16,7 +16,7 @@
 
     <div class="content">
 
-      <livewire:task-manager />          
+      <livewire:task-manager />
 
     </div><!-- /.content -->
 
@@ -25,8 +25,9 @@
 
 @push('scripts')
   <script>
-    $(function() {
-
-    }); // end of initialize jquery
+    Livewire.on('selectProjectHandlerExecuted', function() {
+      console.log('select changed. swap task.');
+      swap_tasks();
+    });
   </script>
 @endpush

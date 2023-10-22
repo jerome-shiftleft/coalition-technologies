@@ -12,7 +12,9 @@ class TaskManager extends Component
   public $projects;
   public $project_id;  
   public $tasks;
-  public $task_id;  
+  public $task_id;
+  public $selectProjectMessage = '';
+  protected $listeners = ['selectProjectHandler' => 'selectProject'];
 
   public function mount()
   {
@@ -26,6 +28,11 @@ class TaskManager extends Component
   public function list_task($project_id) {    
     $tasks = Task::where('project_id', $project_id)->get();
     $this->tasks = $tasks;
+  }
+
+  public function selectProject() {
+    $this->selectProjectMessage = "Project Changed!";
+    $this->emit('selectProjectHandlerExecuted'); // Emit an event to execute JavaScript function
   }
 
   public function render()
