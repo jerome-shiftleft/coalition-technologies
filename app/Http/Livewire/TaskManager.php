@@ -12,10 +12,7 @@ class TaskManager extends Component
   public $projects;
   public $project_id;  
   public $tasks;
-  public $task_id;
-  public $delete_message;
-
-  protected $listeners = ['deleteTaskHandler' => 'deleteTask'];
+  public $task_id;    
 
   public function mount()
   {
@@ -27,15 +24,15 @@ class TaskManager extends Component
   }
 
   public function list_task($project_id) {    
-    $tasks = Task::where('project_id', $project_id)->get();
-    $this->tasks = $tasks;
-    // Emit an event to execute JavaScript function
+    $this->tasks = Task::where('project_id', $project_id)->get();  
+
+    // Emit an event to execute JavaScript function swap_tasks()
     $this->emit('selectProject'); 
   }
 
   public function deleteTask($task_id) {
-    $this->delete_message = 'Deleting '.$task_id;
-    //dd($this->delete_message);
+    Task::destroy($task_id);
+    $this->tasks = Task::where('project_id', $this->project_id)->get();
   }
 
   public function render()

@@ -16,7 +16,7 @@
 
     <div class="content">
 
-      <livewire:task-manager />      
+      <livewire:task-manager />
 
     </div><!-- /.content -->
 
@@ -25,13 +25,10 @@
 
 @push('scripts')
   <script>
-    Livewire.on('selectProject', () => {
-      swap_tasks();
+    document.addEventListener("DOMContentLoaded", () => {
+      Livewire.on('selectProject', () => {
+        swap_tasks();
+      });
     });
-
-    Livewire.on('deleteTask', task_id => {      
-      $('#delete-modal').modal('show');
-      Livewire.emitTo('task-manager','deleteTaskHandler', task_id);
-    })
   </script>
 @endpush

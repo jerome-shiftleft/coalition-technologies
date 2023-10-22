@@ -21,33 +21,35 @@
 
     <div id="task-list">
       @foreach ($tasks as $task)
-        <livewire:tasks-list :task="$task" :wire:key="$task->id">
+        <div class="task" x-data="{ descExpanded: false }">
+
+          <div class="task-header">
+
+            <h3 class="task-title">{{ $task->title }}</h3>
+
+            <div class="task-header-actions">
+
+              <a href="#" x-on:click="descExpanded = !descExpanded" data-bs-toggle="tooltip"
+                data-bs-title="Show/Hide Task Description">
+                <i class="expand-task fa-solid fa-angle-down"></i>
+              </a>
+
+              <a href="#" wire:click="deleteTask({{ $task->id }})">
+                <i class="delete-task fa-solid fa-xmark"></i>
+              </a>
+
+            </div><!-- /.task-header-actions -->
+
+          </div><!-- /.task-header -->          
+
+          <div class="task-content" x-show="descExpanded" x-transition>
+            {{ $task->description }}
+          </div><!-- /.task-content -->
+
+        </div><!-- /.task -->
       @endforeach
     </div><!-- /#task-list -->
 
   @endisset
-
-  @isset($delete_message)
-    {{ $delete_message }}
-  @endisset
-
-  <!-- Delete Modal -->
-  <div class="modal fade delete-modal" id="delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="delete-modal-label" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="delete-modal-label">Delete Task</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Are you sure you want to delete?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </div>
-      </div>
-    </div>
-  </div><!--/.modal-->
 
 </div><!-- /#task-mananager -->

@@ -11,8 +11,7 @@
         <i class="expand-task fa-solid fa-angle-down"></i>
       </a>
 
-      <a href="#" wire:click="deleteTask({{ $task->id }})" data-id="{{ $task->id }}"
-      class="delete-task-btn">
+      <a href="#" wire:click="deleteTask({{ $task->id }})">
         <i class="delete-task fa-solid fa-xmark"></i>
       </a>
 
@@ -21,7 +20,7 @@
   </div><!-- /.task-header -->
 
   <div class="action-message">
-    {{-- {{ $delete_message }} --}}
+
   </div><!-- /.action-message -->
 
   <div class="task-content" x-show="descExpanded" x-transition>

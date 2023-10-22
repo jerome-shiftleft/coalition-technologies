@@ -1,11 +1,12 @@
 #task-manager {
-  width: 100%;
-  max-width: 290px;
+  width: 100%;  
   margin: 0 auto;
 }
 
 #select-project-wrap {
   position: relative;
+  max-width: 290px;
+  margin: 0 auto;
 }
 
 .task-preloader {
@@ -20,8 +21,9 @@
 }
 
 #task-list {
+  margin: 0 auto;
   margin-top: 10px;
-  max-width: 290px;
+  max-width: 290px;  
 }
 
 .task {
