@@ -2,14 +2,20 @@
 
 ## Installation
 
-- download/clone this repository
+- Download/clone this repository
 - Copy .env.example **`cp .env.example .env`**
-- update .env **`APP_URL`** to match your virtual host url.<br>
+- Update `.env` file. Change `APP_URL` to match your virtual host url.<br>
 This is **required** if you want to use **browsersync**
-- **`composer install`**
-- **`php artisan key:generate`**
-- **`npm install`**
-- **`npm run dev`**
+- `composer install`
+- `php artisan key:generate`
+- `npm install`
+- `npm run dev`
+
+### Setup Database
+- Create a database.
+- Update `.env` file to match your database.
+- Run `php artisan migrate --seed` to generate dummy data for projects and tasks table.
+- Run `php artisan migrate:fresh --seed` if you want to regenerate new dummy data.
 
 ## Compiling Assets (Laravel Mix)
 
@@ -45,9 +51,11 @@ If **`BROWSER_SYNC=true`** in .env, it will automatically reloads the browser af
 
 ### dependencies
 - [bootstrap](https://www.npmjs.com/package/bootstrap)
-- [@popperjs/core](https://www.npmjs.com/package/@popperjs/core)
+- [popperjs](https://www.npmjs.com/package/@popperjs/core)
 - [jquery](https://www.npmjs.com/package/jquery)
 - [jquery-ui](https://www.npmjs.com/package/jquery-ui)
+- [alpinejs](https://www.npmjs.com/package/alpinejs)
+- [fontawesome](https://www.npmjs.com/package/@fortawesome/fontawesome-free)
 - [moment](https://www.npmjs.com/package/moment)
 - [select2](https://www.npmjs.com/package/select2)
 
