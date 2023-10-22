@@ -18,6 +18,14 @@
 
       <livewire:task-manager>
 
+        <div x-data="{ open: false }">
+          <button x-on:click="open = !open">Expand</button>
+
+          <span x-show="open">
+            Content...
+          </span>
+        </div>
+
     </div><!-- /.content -->
 
   </div><!--/#main-->
@@ -27,7 +35,7 @@
   <script>
     $(function() {
 
-      swap_tasks();      
+      swap_tasks();
 
       // $('.expand-task').on('click', function() {
       //   console.log('toggle task desc');

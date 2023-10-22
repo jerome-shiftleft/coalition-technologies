@@ -1,4 +1,4 @@
-<div id="task-manager">
+<div id="task-manager" x-data="{ isExpanded: false }">
 
   <div id="select-project-wrap">
 
@@ -19,21 +19,27 @@
 
     <div id="task-list">
       @foreach ($tasks as $task)
-        <div class="task">
+        <div class="task" x-data="{ isTaskExpanded: false }">
 
           <div class="task-header">
-            
+
             <h3 class="task-title">{{ $task->title }}</h3>
 
             <div class="task-header-actions">
-              <a href="#" data-bs-toggle="tooltip" data-bs-title="Show/Hide Task Description"><i class="expand-task fa-solid fa-angle-down"></i></a>
+              {{-- <a href="#" x-on:click="isTaskExpanded = !isTaskExpanded"
+              data-bs-toggle="tooltip" data-bs-title="Show/Hide Task Description">
+                <i class="expand-task fa-solid fa-angle-down"></i>
+              </a> --}}
+              <button x-on:click="isTaskExpanded = !isTaskExpanded" class="expand-tasks">
+                Toggle Task
+              </button>
               {{-- <a href="#" data-bs-toggle="tooltip" data-bs-title="Reorder Task"><i class="reorder-task fa-solid fa-up-down"></i></a> --}}
               <a href="#" data-bs-toggle="tooltip" data-bs-title="Delete Task"><i class="delete-task fa-solid fa-xmark"></i></a>
             </div><!-- /.task-header-actions -->
 
           </div><!-- /.task-header -->
 
-          <div class="task-content">
+          <div class="task-content" x-show="isTaskExpanded">
             {{ $task->description }}
           </div><!-- /.task-content -->
 
