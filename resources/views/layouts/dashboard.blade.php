@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="icon" type="image/x-icon" href="/icon.png">
   @yield('meta-dynamic')
-  
+
   @livewireStyles
 
   @include('layouts.sections.styles')
@@ -21,24 +21,26 @@
 <?php
 $theme = 'dark';
 if (Auth::user()) {
-  $theme = Auth::user()->theme;
-} 
+    $theme = Auth::user()->theme;
+}
 ?>
 
-<body id="{{ $body_id }}" class="{{ $body_class }} {{ $theme }} side-collapse" data-bs-theme="{{ $theme }}">
+<body id="{{ $body_id }}" class="{{ $body_class }} {{ $theme }} side-collapse"
+  data-bs-theme="{{ $theme }}">
 
   <div class="page-wrap">
     @include('layouts.sections.sidebar')
     @include('layouts.sections.topbar')
-    @yield('main')    
+    @yield('main')
     @include('layouts.sections.footer')
   </div><!-- /.page-wrap -->
 
   @livewireScripts
   @include('layouts.sections.footer-scripts')
- 
 
   @stack('scripts')
+
+  <script src="{{ asset('vendor/pharaonic/pharaonic.select2.min.js') }}"></script>
 
 </body>
 
