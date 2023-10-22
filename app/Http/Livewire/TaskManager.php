@@ -12,9 +12,7 @@ class TaskManager extends Component
   public $projects;
   public $project_id;  
   public $tasks;
-  public $task_id;
-  public $selectProjectMessage = '';
-  protected $listeners = ['selectProjectHandler' => 'selectProject'];
+  public $task_id;    
 
   public function mount()
   {
@@ -30,9 +28,8 @@ class TaskManager extends Component
     $this->tasks = $tasks;
   }
 
-  public function selectProject() {
-    $this->selectProjectMessage = "Project Changed!";
-    $this->emit('selectProjectHandlerExecuted'); // Emit an event to execute JavaScript function
+  public function selectProject() {    
+    $this->emit('selectProjectExecuted'); // Emit an event to execute JavaScript function
   }
 
   public function render()

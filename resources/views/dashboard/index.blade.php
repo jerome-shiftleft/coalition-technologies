@@ -25,8 +25,7 @@
 
 @push('scripts')
   <script>
-    Livewire.on('selectProjectHandlerExecuted', function() {
-      console.log('select changed. swap task.');
+    Livewire.on('selectProjectExecuted', () => {      
       swap_tasks();
     });
   </script>
