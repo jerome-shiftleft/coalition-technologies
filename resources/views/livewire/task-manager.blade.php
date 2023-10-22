@@ -26,16 +26,6 @@
       @endforeach
     </div><!-- /#task-list -->
 
-    <script>
-      $(function() {
-        //swap_tasks();
-      }); // end of initialize jquery
-    </script>
-
-    <script>
-      
-    </script>
-
   @endisset
 
 </div><!-- /#task-mananager -->
