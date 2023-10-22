@@ -1,4 +1,4 @@
-<div id="task-manager" x-data="{ taskManager: false }">
+<div id="task-manager" x-data>
 
   <div id="select-project-wrap">
 
