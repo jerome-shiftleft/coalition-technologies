@@ -29,14 +29,14 @@
 
       swap_tasks();      
 
-      $('.expand-task').on('click', function() {
-        console.log('toggle task desc');
-        $(this).closest('.task-header').next('.task-content').toggle();
-      });
+      // $('.expand-task').on('click', function() {
+      //   console.log('toggle task desc');
+      //   $(this).closest('.task-header').next('.task-content').toggle();
+      // });
 
-      $(document).on('click', '.expand-tasks', function() {
-        $(this).closest('.task-header').next('.task-content').toggle();
-      });
+      // $(document).on('click', '.expand-tasks', function() {
+      //   $(this).closest('.task-header').next('.task-content').toggle();
+      // });
 
     }); // end of initialize jquery
   </script>
