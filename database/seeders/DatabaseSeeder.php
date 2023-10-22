@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             ->count(5) // Create 5 projects
             ->create()
             ->each(function ($project) {
-                $taskCount = rand(3, 5); // for each project, create around 5 to 10 tasks
+                $taskCount = rand(3, 5); // for each project, create around 3 to 5 tasks
                 Task::factory()
                     ->count($taskCount)
                     ->create(['project_id' => $project->id]);
