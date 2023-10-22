@@ -24,11 +24,16 @@ class TaskManager extends Component
   }
 
   public function list_task($project_id) {    
-    $tasks = Task::where('project_id', $project_id)->get();
-    $this->tasks = $tasks;
-    // Emit an event to execute JavaScript function
+    $this->tasks = Task::where('project_id', $project_id)->get();  
+
+    // Emit an event to execute JavaScript function swap_tasks()
     $this->emit('selectProject'); 
-  }  
+  }
+
+  public function deleteTask($task_id) {
+    Task::destroy($task_id);
+    $this->tasks = Task::where('project_id', $this->project_id)->get();
+  }
 
   public function render()
   {

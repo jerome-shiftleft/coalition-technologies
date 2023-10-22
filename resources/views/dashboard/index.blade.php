@@ -25,8 +25,10 @@
 
 @push('scripts')
   <script>
-    Livewire.on('selectProject', () => {      
-      swap_tasks();
+    document.addEventListener("DOMContentLoaded", () => {
+      Livewire.on('selectProject', () => {
+        swap_tasks();
+      });
     });
   </script>
 @endpush
