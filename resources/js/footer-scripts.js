@@ -1,7 +1,7 @@
 $(function () {
-  console.log('loading footer scripts...');  
+  console.log('footer-scripts.js loaded!');  
 
-  var base_url = "{{ url('/') }}";
+  var base_url = window.location.origin;;
   console.log('base url: ' + base_url);
 
   // Enable Tooltips
@@ -21,14 +21,14 @@ $(function () {
         $('#sidebar .nav-item-link[data-bs-toggle="tooltip"]').tooltip('enable');        
       } else {
         $('#sidebar .nav-item-link[data-bs-toggle="tooltip"]').tooltip('dispose');        
-      } // end of if ($('#sidebar').hasClass('side-collapse'))
+      }
 
     }) // end of $('#toggle-side').on('click', function() {
 
     // TOOLTIP FIX: HIDE TOOLTIP AFTER CLICK
     $('[data-bs-toggle="tooltip"], [data-toggle="tooltip"]').on('click', function () {
       $(this).tooltip('hide');
-    }) // end of $('[data-bs-toggle="tooltip"]').on('click', function() {
+    })
 
     // TOGGLE LIGHT/DARK
     $('.toggle-theme').on('click', function (e) {
