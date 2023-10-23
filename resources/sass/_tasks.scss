@@ -4,29 +4,22 @@
 }
 
 #select-project-wrap {
-  position: relative;
-  //max-width: 360px;
-  //margin: 0 auto;
+  position: relative;  
   @extend .flex-wrap;
   align-items: center;
 }
 
 .task-preloader {
-  // position: absolute;
-  // left: auto;
-  // right: -24px;
-  // top: 6px;
   margin-left: 10px;
 }
 
 #select-project {
-  max-width: 290px;
+  max-width: 360px;
 }
 
-#task-list {
-  //margin: 0 auto;
+#task-list {  
   margin-top: 10px;
-  max-width: 290px;  
+  max-width: 360px;  
 }
 
 .task {
@@ -54,16 +47,11 @@
     color: $default-font-color;
   }
   a {
-    margin: 0 5px;
+    margin: 0 7px;
   }
 }
 
-#create-task-btn {
-  // position: absolute;
-  // top: auto;
-  // bottom: 50px;
-  // left: auto;
-  // right: 50px;
+#create-task-btn {  
   margin-left: 10px;
 }
 

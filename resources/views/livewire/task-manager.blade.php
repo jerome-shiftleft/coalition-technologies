@@ -38,6 +38,10 @@
                 <i class="expand-task fa-solid fa-angle-down"></i>
               </a>
 
+              <a href="#" class="edit-task-btn">
+                <i class="fa-solid fa-pen"></i>
+              </a> <!-- /.edit-task-btn -->
+
               <a href="#" wire:click="deleteTask({{ $task->id }})">
                 <i class="delete-task fa-solid fa-xmark"></i>
               </a>
