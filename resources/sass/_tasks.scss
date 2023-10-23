@@ -5,15 +5,18 @@
 
 #select-project-wrap {
   position: relative;
-  max-width: 290px;
-  margin: 0 auto;
+  //max-width: 360px;
+  //margin: 0 auto;
+  @extend .flex-wrap;
+  align-items: center;
 }
 
 .task-preloader {
-  position: absolute;
-  left: auto;
-  right: -24px;
-  top: 6px;
+  // position: absolute;
+  // left: auto;
+  // right: -24px;
+  // top: 6px;
+  margin-left: 10px;
 }
 
 #select-project {
@@ -21,7 +24,7 @@
 }
 
 #task-list {
-  margin: 0 auto;
+  //margin: 0 auto;
   margin-top: 10px;
   max-width: 290px;  
 }
@@ -55,8 +58,13 @@
   }
 }
 
-.task-content {
-  //display: none;
+#create-task-btn {
+  // position: absolute;
+  // top: auto;
+  // bottom: 50px;
+  // left: auto;
+  // right: 50px;
+  margin-left: 10px;
 }
 
 .dashboard.dark {

@@ -1,3 +1,5 @@
+import { update_tasks_order } from "./update-tasks-order";
+
 const swap_tasks = () => {
   console.log('swapping tasks');
 
@@ -31,9 +33,8 @@ const swap_tasks = () => {
         droppable.before(temp); // Insert the temporary element before the droppable
         draggable.before(droppable).insertAfter(temp); // Swap the panels
         temp.remove(); // Remove the temporary element
-
-        // update tasks order
-        //updateOrder();
+        
+        update_tasks_order();
       }
     });
   });

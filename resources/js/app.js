@@ -15,5 +15,8 @@ require('@rwap/jquery-ui-touch-punch');
 import { swap_tasks } from './swap-tasks';
 window.swap_tasks = swap_tasks;
 
+import { update_tasks_order } from './update-tasks-order';
+window.update_tasks_order = update_tasks_order;
+
 require('./footer-scripts');
 require('./custom');

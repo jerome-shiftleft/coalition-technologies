@@ -9,6 +9,10 @@
       @endforeach
     </select>
 
+    <a href="#" id="create-task-btn" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#create-task-modal">
+      <i class="fa-solid fa-plus"></i>
+    </a><!-- /#create-task-btn -->
+
     <div wire:loading class="task-preloader">
       <div class="spinner-border spinner-border-sm" role="status">
         <span class="visually-hidden">Loading...</span>
@@ -40,7 +44,7 @@
 
             </div><!-- /.task-header-actions -->
 
-          </div><!-- /.task-header -->          
+          </div><!-- /.task-header -->
 
           <div class="task-content" x-show="descExpanded" x-transition>
             {{ $task->description }}
@@ -51,5 +55,24 @@
     </div><!-- /#task-list -->
 
   @endisset
+
+  <!-- Create Task Modal -->
+  <div class="modal fade" id="create-task-modal" tabindex="-1" aria-labelledby="create-task-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="create-task-modal-label">Create Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div><!--/create-task-modal-->
 
 </div><!-- /#task-mananager -->
