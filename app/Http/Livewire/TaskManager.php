@@ -16,7 +16,7 @@ class TaskManager extends Component
 
   public function mount()
   {
-    $this->projects = Project::all();
+    $this->projects = Project::all();    
   }
 
   public function updatedProjectId() {    
