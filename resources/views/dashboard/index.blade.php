@@ -25,6 +25,8 @@
 
 @push('scripts')
   <script>
-    
+    $(function() {
+
+    }) // end of initialize jquery
   </script>
 @endpush
