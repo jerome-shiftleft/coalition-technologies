@@ -1,38 +1,23 @@
-<!-- Create Task Modal -->
-<div class="modal fade" id="create-task-modal" tabindex="-1" aria-labelledby="create-task-modal-label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="create-task-modal-label">Create Task</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+<div id="create-task-modal">
+  <form>
+    <div class="form-inputs">
 
-        <form>
+      <select name="task_project_id" id="task-project-id" class="form-select">
+        <option value="0">Select Project</option>
+        @foreach ($projects as $project)
+          <option value="{{ $project->id }}">{{ $project->title }}</option>
+        @endforeach
+      </select>
 
-          <div class="form-inputs">            
+      <input type="text" id="title" name="title" class="form-control" placeholder="Title">
 
-            <select name="task_project_id" id="task-project-id" class="form-select">
-              <option value="0">Select Project</option>
-              @foreach ($projects as $project)
-                <option value="{{ $project->id }}">{{ $project->title }}</option>
-              @endforeach
-            </select>
+      <textarea id="description" name="description" class="form-control" rows="3" placeholder="Description"></textarea>
 
-            <input type="text" id="title" name="title" class="form-control" placeholder="Title">            
+    </div><!-- /.form-inputs -->
 
-            <textarea id="description" name="description" class="form-control" rows="3" placeholder="Description"></textarea>
-
-          </div><!-- /.form-inputs -->
-
-          <div class="modal-actions">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button wire:click="createTask" type="button" class="btn btn-primary">Save</button>
-          </div><!-- /.modal-actions -->
-
-        </form>
-
-      </div><!--/.modal-body-->
-    </div>
-  </div>
-</div><!--/create-task-modal-->
+    <div class="modal-actions">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      <button wire:click="createTask" type="button" class="btn btn-primary">Save</button>
+    </div><!-- /.modal-actions -->
+  </form>
+</div><!-- /#create-task-modal -->

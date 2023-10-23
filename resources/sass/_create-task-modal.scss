@@ -1,5 +1,10 @@
 #create-task-modal {
 
+  form {
+    width: 100%;
+    max-width: 360px;
+  }
+
   .form-inputs {
     margin-bottom: 10px;
     .form-control,
