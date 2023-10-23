@@ -17,8 +17,6 @@ class TaskManager extends Component
   public $title;
   public $description;
   public $task_project_id;
-  public $create_task_data;
-  public $create_message;
 
   protected $listeners = ['createTask'];
 
@@ -52,8 +50,13 @@ class TaskManager extends Component
   }
 
   public function createTask($data)
-  {    
-    $this->create_message = "Task created with title ".$data['title'];
+  {
+    Task::create([
+      'title'       => $data['title'],
+      'project_id'  => $data['project_id'],
+      'description' => $data['description']
+    ]);
+
     $this->emit('taskCreated', $data);
   }
 

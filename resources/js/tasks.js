@@ -9,9 +9,9 @@ $(function () {
 
   Livewire.on('taskCreated', data => {
     $('#create-task-form')[0].reset();
-    console.log('task created!');
-    console.log('title: ', data.title);
-    console.log(data);    
+    $('#create-task-modal').css('display', 'none');
+    console.log('task created!');    
+    console.log(data);
   });
 
   $('#create-task-modal-btn').on('click', function () {
