@@ -22,7 +22,7 @@
 
     <div class="modal-actions">
       <button type="button" id="create-task-cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-      <button id="create-task-save" type="submit" class="btn btn-primary">Create</button>
+      <button id="create-task-btn" type="submit" class="btn btn-primary">Create</button>
     </div><!-- /.modal-actions -->
 
   </form>
