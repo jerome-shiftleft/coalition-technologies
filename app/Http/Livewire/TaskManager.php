@@ -15,6 +15,7 @@ class TaskManager extends Component
   public $task_id;
   public $title;
   public $description;
+  public $create_validation_error;
 
   protected $listeners = ['createTask', 'reorderTasks'];
 
@@ -52,20 +53,25 @@ class TaskManager extends Component
 
   public function createTask($data)
   {
-    Task::create([
-      'title'       => $data['title'],
-      'project_id'  => $data['project_id'],
-      'description' => $data['description']
-    ]);
 
-    $this->project_id = $data['project_id'];
+    if (empty($data['project_id']) || empty($data['title'])) {
+      $this->create_validation_error = 'Please select a project and provide a title.';
+    } else {
+      Task::create([
+        'title'       => $data['title'],
+        'project_id'  => $data['project_id'],
+        'description' => $data['description']
+      ]);
 
-    $this->tasks = Task::where('project_id', $this->project_id)
-      ->orderBy('order')
-      ->orderBy('created_at')
-      ->get();
+      $this->project_id = $data['project_id'];
 
-    $this->emit('taskCreated', $data);
+      $this->tasks = Task::where('project_id', $this->project_id)
+        ->orderBy('order')
+        ->orderBy('created_at')
+        ->get();
+
+      $this->emit('taskCreated', $data);
+    }
   }
 
   public function reorderTasks($tasks)
@@ -87,5 +93,4 @@ class TaskManager extends Component
   {
     return view('livewire.task-manager');
   }
-  
 } // end of class TaskManager extends Component

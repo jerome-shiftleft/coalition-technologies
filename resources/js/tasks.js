@@ -1,6 +1,6 @@
 $(function () {
   console.log('task.js loaded!');
-  
+
   Livewire.on('selectProject', () => {
     var project_id = $('#select-project').val();
     $('#task-project-id').val(project_id);
@@ -11,7 +11,7 @@ $(function () {
     //$('#create-task-form')[0].reset();
     $('#create-task-form').find('input, textarea').val('');
     $('#create-task-modal').css('display', 'none');
-    console.log('task created!');    
+    console.log('task created!');
     console.log(data);
     swap_tasks();
   });
@@ -44,7 +44,8 @@ $(function () {
     } else {
       console.log('Valid form data');
       Livewire.emit('createTask', data);
-    } // end of if (project_id === '0' || title.trim() === '')
+    }
+    //end of if (project_id === '0' || title.trim() === '')    
 
   }); // end of $('#create-task-form').on('submit', function (e)
 
