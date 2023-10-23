@@ -73,6 +73,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div><!--/create-task-modal-->
 
 </div><!-- /#task-mananager -->
