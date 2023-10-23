@@ -7,9 +7,9 @@
     @endforeach
   </select>
 
-  <a href="#" id="create-task-btn" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#create-task-modal">
+  <a href="#" id="create-task-modal-btn" class="btn btn-dark">
     <i class="fa-solid fa-plus"></i>
-  </a><!-- /#create-task-btn -->
+  </a><!-- /#create-task-modal-btn -->
 
   <div wire:loading class="task-preloader">
     <div class="spinner-border spinner-border-sm" role="status">

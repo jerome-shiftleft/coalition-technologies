@@ -19,4 +19,5 @@ import { update_tasks_order } from './update-tasks-order';
 window.update_tasks_order = update_tasks_order;
 
 require('./footer-scripts');
+require('./tasks');
 require('./custom');

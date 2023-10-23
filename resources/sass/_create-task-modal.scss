@@ -1,8 +1,26 @@
 #create-task-modal {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0, 0.7);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
 
   form {
     width: 100%;
     max-width: 360px;
+  }
+
+  .validation-error {
+    margin-bottom: 5px;
+    @extend .text-danger;
+    text-align: center;
+    font-size: 16px;
   }
 
   .form-inputs {
@@ -15,10 +33,10 @@
 
   .modal-actions {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     > .btn {
-      width: 75px;
-      margin-left: 10px;
+      width: 100px;
+      margin: 0 5px;
     }
   } // end of .modal-actions
 

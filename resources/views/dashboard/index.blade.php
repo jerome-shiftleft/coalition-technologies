@@ -25,16 +25,6 @@
 
 @push('scripts')
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      Livewire.on('selectProject', () => {
-        var project_id = $('#select-project').val();
-        $('#task-project-id').val(project_id);
-        swap_tasks();
-      });
-
-      Livewire.on('taskCreated', () => {
-        $('#create-task-modal').modal('hide');
-      })
-    });
+    
   </script>
 @endpush

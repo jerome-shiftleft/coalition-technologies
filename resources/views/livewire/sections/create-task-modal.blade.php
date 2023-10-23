@@ -1,5 +1,10 @@
 <div id="create-task-modal">
-  <form>
+  <form id="create-task-form"> 
+
+    <div class="validation-error">
+
+    </div><!-- /#validation-error -->
+
     <div class="form-inputs">
 
       <select name="task_project_id" id="task-project-id" class="form-select">
@@ -16,8 +21,9 @@
     </div><!-- /.form-inputs -->
 
     <div class="modal-actions">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-      <button wire:click="createTask" type="button" class="btn btn-primary">Save</button>
+      <button type="button" id="create-task-cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      <button id="create-task-save" type="submit" class="btn btn-primary">Create</button>
     </div><!-- /.modal-actions -->
+
   </form>
 </div><!-- /#create-task-modal -->

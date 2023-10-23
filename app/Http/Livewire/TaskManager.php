@@ -17,6 +17,10 @@ class TaskManager extends Component
   public $title;
   public $description;
   public $task_project_id;
+  public $create_task_data;
+  public $create_message;
+
+  protected $listeners = ['createTask'];
 
   public function mount()
   {
@@ -47,10 +51,10 @@ class TaskManager extends Component
       ->get();
   }
 
-  public function createTask()
+  public function createTask($data)
   {
-
-    $this->emit('taskCreated');
+    $this->create_message = "Task created with title ".$data['title'];
+    $this->emit('taskCreated', $data);
   }
 
   public function render()
