@@ -8,7 +8,8 @@ $(function () {
   });
 
   Livewire.on('taskCreated', data => {
-    $('#create-task-form')[0].reset();
+    //$('#create-task-form')[0].reset();
+    $('#create-task-form').find('input, textarea').val('');
     $('#create-task-modal').css('display', 'none');
     console.log('task created!');    
     console.log(data);
