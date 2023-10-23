@@ -1,0 +1,20 @@
+#create-task-modal {
+
+  .form-inputs {
+    margin-bottom: 10px;
+    .form-control,
+    .form-select {
+      margin-bottom: 15px;
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    > .btn {
+      width: 75px;
+      margin-left: 10px;
+    }
+  } // end of .modal-actions
+
+} // end of create-task-modal
