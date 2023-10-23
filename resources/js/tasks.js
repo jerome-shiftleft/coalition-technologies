@@ -31,8 +31,6 @@ $(function () {
     var title = $('#title').val();
     var description = $('#description').val();
 
-    var data = ['project_id', 'title', 'description'];
-
     var data = {
       project_id,
       title,
