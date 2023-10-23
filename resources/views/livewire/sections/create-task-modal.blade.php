@@ -9,14 +9,14 @@
 
     <div class="form-inputs">
 
-      <select name="task_project_id" id="task-project-id" class="form-select">
+      <select name="task_project_id" id="task-project-id" class="form-select" required>
         <option value="0">Select Project</option>
         @foreach ($projects as $project)
           <option value="{{ $project->id }}">{{ $project->title }}</option>
         @endforeach
       </select>
 
-      <input type="text" id="title" name="title" class="form-control" placeholder="Title">
+      <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
 
       <textarea id="description" name="description" class="form-control" rows="3" placeholder="Description"></textarea>
 
