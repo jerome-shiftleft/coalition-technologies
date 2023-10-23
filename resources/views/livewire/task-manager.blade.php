@@ -9,7 +9,7 @@
       @endforeach
     </select>
 
-    <a href="#" id="create-task-btn" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-title="Create Task">
+    <a href="#" id="create-task-btn" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#create-task-modal">
       <i class="fa-solid fa-plus"></i>
     </a><!-- /#create-task-btn -->
 
@@ -61,7 +61,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="create-task-modal-label">Modal title</h1>
+          <h1 class="modal-title fs-5" id="create-task-modal-label">Create Task</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
