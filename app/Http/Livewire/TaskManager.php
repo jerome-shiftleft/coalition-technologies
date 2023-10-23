@@ -87,4 +87,5 @@ class TaskManager extends Component
   {
     return view('livewire.task-manager');
   }
-}
+  
+} // end of class TaskManager extends Component
