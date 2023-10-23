@@ -1,20 +1,36 @@
 $(function () {
   console.log('task.js loaded!');
 
-  Livewire.on('selectProject', () => {
+  // Livewire.on('selectProject', () => {
+  //   var project_id = $('#select-project').val();
+  //   $('#task-project-id').val(project_id);
+  //   swap_tasks();
+  // });
+
+  window.addEventListener('selectProject', event => {
+    console.log('dispatch selectProject!');
     var project_id = $('#select-project').val();
     $('#task-project-id').val(project_id);
     swap_tasks();
-  });
+  })
 
-  Livewire.on('taskCreated', data => {
-    //$('#create-task-form')[0].reset();
+  // Livewire.on('taskCreated', data => {
+  //   //$('#create-task-form')[0].reset();
+  //   $('#create-task-form').find('input, textarea').val('');
+  //   $('#create-task-modal').css('display', 'none');
+  //   console.log('task created!');
+  //   console.log(data);
+  //   swap_tasks();
+  // });
+
+  window.addEventListener('taskCreated', event => {
+    console.log('dispatch taskCreated');
     $('#create-task-form').find('input, textarea').val('');
     $('#create-task-modal').css('display', 'none');
     console.log('task created!');
-    console.log(data);
+    console.log(event.detail.data);
     swap_tasks();
-  });
+  })
 
   $('#create-task-modal-btn').on('click', function () {
     $('#create-task-modal').css('display', 'flex');
@@ -45,7 +61,7 @@ $(function () {
       console.log('Valid form data');
       Livewire.emit('createTask', data);
     }
-    
+
     //Livewire.emit('createTask', data);
 
   }); // end of $('#create-task-form').on('submit', function (e)
