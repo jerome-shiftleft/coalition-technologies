@@ -45,7 +45,8 @@ $(function () {
       console.log('Valid form data');
       Livewire.emit('createTask', data);
     }
-    //end of if (project_id === '0' || title.trim() === '')    
+    
+    //Livewire.emit('createTask', data);
 
   }); // end of $('#create-task-form').on('submit', function (e)
 

@@ -22,6 +22,7 @@ class TaskManager extends Component
   public function mount()
   {
     $this->projects = Project::all();
+    $this->create_validation_error = '';
   }
 
   public function updatedProjectId()
