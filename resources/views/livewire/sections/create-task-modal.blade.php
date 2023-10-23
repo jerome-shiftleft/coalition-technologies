@@ -1,4 +1,4 @@
-<div id="create-task-modal">
+<div id="create-task-modal" class="task-modal">
   <form id="create-task-form"> 
 
     <div class="validation-error">
