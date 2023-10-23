@@ -8,11 +8,18 @@
       </div>
       <div class="modal-body">
 
-        <form wire:submit.prevent="submit">
+        <form>
 
-          <div class="form-inputs">
+          <div class="form-inputs">            
 
-            <input type="text" id="title" name="title" class="form-control" placeholder="Title">
+            <select name="task_project_id" id="task-project-id" class="form-select">
+              <option value="0">Select Project</option>
+              @foreach ($projects as $project)
+                <option value="{{ $project->id }}">{{ $project->title }}</option>
+              @endforeach
+            </select>
+
+            <input type="text" id="title" name="title" class="form-control" placeholder="Title">            
 
             <textarea id="description" name="description" class="form-control" rows="3" placeholder="Description"></textarea>
 
@@ -20,7 +27,7 @@
 
           <div class="modal-actions">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Save</button>
+            <button wire:click="createTask" type="button" class="btn btn-primary">Save</button>
           </div><!-- /.modal-actions -->
 
         </form>

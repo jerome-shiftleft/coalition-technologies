@@ -10,29 +10,47 @@ class TaskManager extends Component
 {
 
   public $projects;
-  public $project_id;  
+  public $project_id;
   public $tasks;
-  public $task_id;    
+  public $task_id;
+
+  public $title;
+  public $description;
+  public $task_project_id;
 
   public function mount()
   {
-    $this->projects = Project::all();    
+    $this->projects = Project::all();
   }
 
-  public function updatedProjectId() {    
-    $this->listTask($this->project_id);    
+  public function updatedProjectId()
+  {
+    $this->listTask($this->project_id);
+    $this->task_project_id = $this->project_id;
   }
 
-  public function listTask($project_id) {    
-    $this->tasks = Task::where('project_id', $project_id)->get();  
+  public function listTask($project_id)
+  {
+    $this->tasks = Task::where('project_id', $project_id)
+      ->orderBy('priority')
+      ->get();
 
     // Emit an event to execute JavaScript function swap_tasks()
-    $this->emit('selectProject'); 
+    $this->emit('selectProject');
   }
 
-  public function deleteTask($task_id) {
+  public function deleteTask($task_id)
+  {
     Task::destroy($task_id);
-    $this->tasks = Task::where('project_id', $this->project_id)->get();
+    $this->tasks = Task::where('project_id', $this->project_id)
+      ->orderBy('priority')
+      ->get();
+  }
+
+  public function createTask()
+  {
+
+    $this->emit('taskCreated');
   }
 
   public function render()
