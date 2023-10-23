@@ -23,7 +23,7 @@
     </div><!-- /.form-inputs -->
 
     <div class="modal-actions">
-      <button type="button" id="create-task-cancel" class="btn btn-secondary">Cancel</button>
+      <button type="button" id="create-task-cancel-btn" class="btn btn-secondary">Cancel</button>
       <button id="create-task-btn" type="submit" class="btn btn-primary">Create</button>
     </div><!-- /.modal-actions -->
 

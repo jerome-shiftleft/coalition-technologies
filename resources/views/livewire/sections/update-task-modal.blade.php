@@ -1,5 +1,5 @@
 <div id="update-task-modal" class="task-modal">
-  <form id="create-task-form">
+  <form id="update-task-form">
 
     <h2 class="modal-title">Create Task</h2>
 
@@ -23,8 +23,8 @@
     </div><!-- /.form-inputs -->
 
     <div class="modal-actions">
-      <button type="button" id="create-task-cancel" class="btn btn-secondary">Cancel</button>
-      <button id="create-task-btn" type="submit" class="btn btn-primary">Create</button>
+      <button type="button" id="update-task-cancel-btn" class="btn btn-secondary">Cancel</button>
+      <button id="update-task-btn" type="submit" class="btn btn-primary">Save</button>
     </div><!-- /.modal-actions -->
 
   </form>

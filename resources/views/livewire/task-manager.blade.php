@@ -3,4 +3,5 @@
   <x-validation-error :message="$create_validation_error" />
   @include('livewire.sections.task-list')
   @include('livewire.sections.create-task-modal')
+  @include('livewire.sections.update-task-modal')
 </div><!-- /#task-mananager -->

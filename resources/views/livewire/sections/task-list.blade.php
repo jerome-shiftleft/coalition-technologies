@@ -14,7 +14,7 @@
               <i class="expand-task fa-solid fa-angle-down"></i>
             </a>
 
-            <a href="#" class="edit-task-btn">
+            <a href="#" class="update-task-modal-btn">
               <i class="fa-solid fa-pen"></i>
             </a> <!-- /.edit-task-btn -->
 
