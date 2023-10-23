@@ -20,10 +20,10 @@ class TaskManager extends Component
   }
 
   public function updatedProjectId() {    
-    $this->list_task($this->project_id);    
+    $this->listTask($this->project_id);    
   }
 
-  public function list_task($project_id) {    
+  public function listTask($project_id) {    
     $this->tasks = Task::where('project_id', $project_id)->get();  
 
     // Emit an event to execute JavaScript function swap_tasks()
