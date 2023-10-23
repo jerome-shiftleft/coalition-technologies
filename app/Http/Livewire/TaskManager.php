@@ -52,7 +52,7 @@ class TaskManager extends Component
   }
 
   public function createTask($data)
-  {
+  {    
     $this->create_message = "Task created with title ".$data['title'];
     $this->emit('taskCreated', $data);
   }
