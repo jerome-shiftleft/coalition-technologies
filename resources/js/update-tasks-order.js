@@ -1,5 +1,5 @@
 const update_tasks_order = () => {
-  console.log('updating tasks order...');
+  //console.log('updating tasks order...');
 
   var tasks = []
 
@@ -11,8 +11,8 @@ const update_tasks_order = () => {
   });
 
   tasks.pop();
-  console.log('new tasks order: ');
-  console.log(tasks);
+  // console.log('new tasks order: ');
+  // console.log(tasks);
 
   Livewire.emitTo('task-manager', 'reorderTasks', tasks);
 }

@@ -10,7 +10,7 @@
     <div class="form-inputs">
 
       <select name="task_project_id" id="task-project-id" class="form-select" required>
-        <option value="0">Select Project</option>
+        <option value="">Select Project</option>
         @foreach ($projects as $project)
           <option value="{{ $project->id }}">{{ $project->title }}</option>
         @endforeach

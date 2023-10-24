@@ -1,7 +1,7 @@
 @isset($tasks)
   <div id="task-list">
     @foreach ($tasks as $task)
-      <div class="task" x-data="{ descExpanded: false }" data-id="{{ $task->id }}" data-order="{{ $task->order }}">
+      <div class="task" data-id="{{ $task->id }}" data-order="{{ $task->order }}">
 
         <div class="task-header">
 
@@ -9,9 +9,8 @@
 
           <div class="task-header-actions">
 
-            <a href="#" x-on:click="descExpanded = !descExpanded" data-bs-toggle="tooltip"
-              data-bs-title="Show/Hide Task Description">
-              <i class="expand-task fa-solid fa-angle-down"></i>
+            <a href="#" class="expand-task">
+              <i class="fa-solid fa-angle-down"></i>
             </a>
 
             <a href="#" class="update-task-modal-btn">
@@ -26,7 +25,7 @@
 
         </div><!-- /.task-header -->
 
-        <div class="task-content" x-show="descExpanded" x-transition>
+        <div class="task-content" >
           {{ $task->description }}
         </div><!-- /.task-content -->
 

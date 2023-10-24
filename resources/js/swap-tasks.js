@@ -1,7 +1,7 @@
 import { update_tasks_order } from "./update-tasks-order";
 
 const swap_tasks = () => {
-  console.log('swapping tasks');
+  //console.log('swapping tasks');
 
   var tasks = $(".task");
 
