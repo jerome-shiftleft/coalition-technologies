@@ -9,16 +9,16 @@
 
           <div class="task-header-actions">
 
-            <a href="#" class="expand-task">
+            <a href="#" class="task-action expand-task">
               <i class="fa-solid fa-angle-down"></i>
             </a>
 
-            <a href="#" class="update-task-modal-btn">
+            <a href="#" class="task-action update-task-modal-btn">
               <i class="fa-solid fa-pen"></i>
             </a> <!-- /.edit-task-btn -->
 
             <a href="#" wire:click="deleteTask({{ $task->id }})">
-              <i class="delete-task fa-solid fa-xmark"></i>
+              <i class="task-action delete-task fa-solid fa-xmark"></i>
             </a>
 
           </div><!-- /.task-header-actions -->

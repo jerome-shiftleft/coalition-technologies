@@ -3,16 +3,13 @@ const update_tasks_order = () => {
 
   var tasks = []
 
-  $('#task-list > .task').each(function(index) {
+  $('#task-list > .task').each(function (index) {
     var id = $(this).data('id');
-    var title = $(this).find('.task-title').text();        
-    //console.log(`[${index}] - ${id}. ${title}`);
-    tasks.push({id, title});
-  });
-
-  tasks.pop();
-  // console.log('new tasks order: ');
-  // console.log(tasks);
+    var title = $(this).find('.task-title').text();
+    console.log('temp raw order: ');
+    console.log(`[${index}] - ${id}. ${title}`);
+    tasks.push({ id, title });
+  });  
 
   Livewire.emitTo('task-manager', 'reorderTasks', tasks);
 }
