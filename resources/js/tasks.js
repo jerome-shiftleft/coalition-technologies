@@ -68,21 +68,8 @@ $(function () {
   window.addEventListener('selectProject', event => {
     console.log('dispatch selectProject!');
     var project_id = $('#select-project').val();
-    $('#task-project-id').val(project_id);
-    
-    swap_tasks();
-    var tasks = []
-
-    console.log('tasks priority: ');
-    $('#task-list > .task').each(function (index) {
-      var data_id = $(this).data('id');
-      var new_priority = index;
-      var title = $(this).find('.task-title').text();
-      console.log(`index[${index}] id:${data_id} priority:${new_priority} title:${title}`);      
-      tasks.push({ data_id, new_priority });
-    });
-
-    Livewire.emitTo('task-manager', 'reorderTasks', tasks);
+    $('#task-project-id').val(project_id);    
+    swap_tasks();    
   }) // end of window.addEventListener('selectProject', event => {  
 
   window.addEventListener('taskCreated', event => {
