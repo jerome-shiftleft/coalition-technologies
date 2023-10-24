@@ -1,7 +1,7 @@
 @isset($tasks)
   <div id="task-list">
     @foreach ($tasks as $task)
-      <div class="task" data-id="{{ $task->id }}" data-order="{{ $task->order }}">
+      <div class="task" data-id="{{ $task->id }}" data-priority="{{ $task->priority }}">
 
         <div class="task-header">
 

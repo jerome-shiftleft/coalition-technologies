@@ -35,7 +35,7 @@ class TaskManager extends Component
     $this->project_id = $project_id;
 
     $this->tasks = Task::where('project_id', $this->project_id)
-      ->orderBy('order')
+      ->orderBy('priority')
       ->orderBy('created_at')
       ->get();
 
@@ -48,7 +48,7 @@ class TaskManager extends Component
   {
     Task::destroy($task_id);
     $this->tasks = Task::where('project_id', $this->project_id)
-      ->orderBy('order')
+      ->orderBy('priority')
       ->orderBy('created_at')
       ->get();
   }
@@ -60,30 +60,30 @@ class TaskManager extends Component
     } else {
       $this->validation_error = null;
 
-      $highest_order = Task::where('project_id', $data['project_id'])
-        ->orderBy('order', 'desc')
-        ->value('order');
+      $highest_priority = Task::where('project_id', $data['project_id'])
+        ->orderBy('priority', 'desc')
+        ->value('priority');
 
-      $order = $highest_order + 1;
+      $priority = $highest_priority + 1;
 
       Task::create([
         'title'       => $data['title'],
         'project_id'  => $data['project_id'],
         'description' => $data['description'],
-        'order'       => $order
+        'priority'       => $priority
       ]);
 
       $this->project_id = $data['project_id'];
 
       $this->tasks = Task::where('project_id', $this->project_id)
-        ->orderBy('order')
+        ->orderBy('priority')
         ->orderBy('created_at')
         ->get();
 
       //$this->emit('taskCreated', $data);
       $this->dispatchBrowserEvent('taskCreated', [
         'data' => $data,
-        'order' => $order
+        'priority' => $priority
       ]);
     } // end of if (empty($data['project_id']) || empty($data['title']))
   } // end of public function createTask($data)
@@ -97,12 +97,12 @@ class TaskManager extends Component
     foreach ($tasks as $key => $task) {
       $id = (int)$task['id'];
       $query = Task::find($id);
-      $query->order = $key;
+      $query->priority = $key;
       $query->save();
     }
 
     $this->tasks = Task::where('project_id', $this->project_id)
-      ->orderBy('order')
+      ->orderBy('priority')
       ->orderBy('created_at')
       ->get();
   } // end of public function reorderTasks

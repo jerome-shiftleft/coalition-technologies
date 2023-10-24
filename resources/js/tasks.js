@@ -57,7 +57,7 @@ $(function () {
     $('#update-project-id').val(project_id);
     $('#update-title').val(title);
     $('#update-description').val(description);
-    
+
 
   }); // end of $('.update-task-modal-btn').on('click', function () {
 
@@ -80,9 +80,9 @@ $(function () {
     console.log('tasks: ');
     $('#task-list > .task').each(function (index) {
       var id = $(this).data('id');
-      var order = $(this).data('order');
+      var priority = $(this).data('priority');
       var title = $(this).find('.task-title').text();
-      console.log(`index[${index}] id:${id} order:${order} title:${title}`);      
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);      
     });
     
     swap_tasks();
