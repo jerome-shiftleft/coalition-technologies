@@ -34,7 +34,8 @@
   border-radius: 5px;
   margin-bottom: 5px;
 
-  &.ui-sortable-helper {    
+  &.ui-sortable-helper,
+  &.draggable--over {    
     &, a {
       color: #fff !important;
     }
