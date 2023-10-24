@@ -50,8 +50,14 @@ $(function () {
     var id = parseInt(task.data('id'));
     var title = task.find('.task-title').text();
     var description = task.find('.task-content').text();
+    description = description.trim();
 
-    //console.log(`tid: ${id} - pid: ${project_id} - ${title} - ${description}`);
+    console.log(`tid: ${id} - pid: ${project_id} - ${title} - ${description}`);
+
+    $('#update-project-id').val(project_id);
+    $('#update-title').val(title);
+    $('#update-description').val(description);
+
 
   }); // end of $('.update-task-modal-btn').on('click', function () {
 
@@ -62,8 +68,8 @@ $(function () {
   window.addEventListener('selectProject', event => {
     console.log('dispatch selectProject!');
     var project_id = $('#select-project').val();
-    $('#task-project-id').val(project_id);
-    swap_tasks();
+    $('#task-project-id').val(project_id);    
+    //swap_tasks();    
   }) // end of window.addEventListener('selectProject', event => {  
 
   window.addEventListener('taskCreated', event => {
@@ -73,13 +79,12 @@ $(function () {
     console.log('task created!');
     console.log('tasks: ');
     $('#task-list > .task').each(function (index) {
-      var id = $(this).data('id');
-      var order = $(this).data('order');
+      var data_id = $(this).data('id');
+      var priority = $(this).data('priority');
       var title = $(this).find('.task-title').text();
-      console.log(`index[${index}] id:${id} order:${order} title:${title}`);      
-    });
-    
-    swap_tasks();
-  })
+      console.log(`index[${index}] id:${data_id} priority:${priority} title:${title}`);      
+    });    
+    //swap_tasks();
+  }) // end of window.addEventListener('taskCreated', event => {  
 
 }); // end of initialize jquery

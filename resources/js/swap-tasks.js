@@ -7,7 +7,7 @@ const swap_tasks = () => {
     revert: 150,
     update: function() {
       console.log('sorting...');
-      update_tasks_order();
+      update_tasks_priority();
     }
   });
 } // end of swap_tasks()

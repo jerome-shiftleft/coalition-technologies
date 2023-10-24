@@ -18,7 +18,7 @@
 
       <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
 
-      <textarea id="description" name="description" class="form-control" rows="3" placeholder="Description"></textarea>
+      <textarea id="description" name="description" class="form-control" rows="4" placeholder="Description"></textarea>
 
     </div><!-- /.form-inputs -->
 
