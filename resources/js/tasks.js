@@ -58,7 +58,6 @@ $(function () {
     $('#update-title').val(title);
     $('#update-description').val(description);
 
-
   }); // end of $('.update-task-modal-btn').on('click', function () {
 
   $(document).on('click', '#update-task-cancel-btn', function () {
@@ -68,23 +67,39 @@ $(function () {
   window.addEventListener('selectProject', event => {
     console.log('dispatch selectProject!');
     var project_id = $('#select-project').val();
-    $('#task-project-id').val(project_id);    
-    //swap_tasks();    
-  }) // end of window.addEventListener('selectProject', event => {  
+    $('#task-project-id').val(project_id);
+    console.log('tasks order: ');
+    $('#task-list > .task').each(function (index) {
+      var id = $(this).data('id');
+      var priority = $(this).data('priority');
+      var title = $(this).find('.task-title').text();
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);
+    }); // end of $('#task-list > .task').each(function (index) {
+  }); // end of window.addEventListener('selectProject', event => {  
 
   window.addEventListener('taskCreated', event => {
     console.log('dispatch taskCreated');
     $('#create-task-form').find('input, textarea').val('');
     $('#create-task-modal').css('display', 'none');
     console.log('task created!');
-    console.log('tasks: ');
+    console.log('tasks order: ');
     $('#task-list > .task').each(function (index) {
-      var data_id = $(this).data('id');
+      var id = $(this).data('id');
       var priority = $(this).data('priority');
       var title = $(this).find('.task-title').text();
-      console.log(`index[${index}] id:${data_id} priority:${priority} title:${title}`);      
-    });    
-    //swap_tasks();
-  }) // end of window.addEventListener('taskCreated', event => {  
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);
+    }); // end of $('#task-list > .task').each(function (index) {
+  }); // end of window.addEventListener('taskCreated', event => {
+
+  window.addEventListener('listOrder', event => {
+    console.log('tasks order: ');
+    $('#task-list > .task').each(function (index) {
+      var id = $(this).data('id');
+      var priority = $(this).data('priority');
+      var title = $(this).find('.task-title').text();
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);
+    }); // end of $('#task-list > .task').each(function (index) {
+  }); // end of window.addEventListener('listOrder', event => {
+
 
 }); // end of initialize jquery

@@ -17,7 +17,7 @@ class TaskManager extends Component
   public $description;
   public $validation_error;
 
-  protected $listeners = ['createTask', 'updateTask', 'reorderTasks'];
+  protected $listeners = ['createTask', 'updateTask'];
 
   public function mount()
   {
@@ -92,7 +92,7 @@ class TaskManager extends Component
   {
   } // end of public function updateTask($data)
 
-  public function updateTaskOrder($sortedTasks)
+  public function reorderTasks($sortedTasks)
   {
     foreach ($sortedTasks as $task) {
       Task::where('id', $task['value'])->update(['priority' => $task['order']]);
@@ -101,23 +101,10 @@ class TaskManager extends Component
       ->orderBy('priority')
       ->orderBy('created_at')
       ->get();
-  }
 
-  public function reorderTasks($tasks)
-  {
-    foreach ($tasks as $key => $task) {
-      $id = (int)$task['data_id'];
-      $new_priority = (int)$task['new_priority'];
-      $query = Task::find($id);
-      $query->priority = $new_priority;
-      $query->save();
-    }
+    $this->dispatchBrowserEvent('listOrder');
 
-    $this->tasks = Task::where('project_id', $this->project_id)
-      ->orderBy('priority')
-      ->orderBy('created_at')
-      ->get();
-  } // end of public function reorderTasks
+  } // end of public function reorderTasks($sortedTasks)
 
   public function render()
   {

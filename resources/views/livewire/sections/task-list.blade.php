@@ -1,5 +1,5 @@
 @isset($tasks)
-  <div id="task-list" wire:sortable="updateTaskOrder">
+  <div id="task-list" wire:sortable="reorderTasks">
     @foreach ($tasks as $task)
       <div class="task" wire:sortable.item="{{ $task->id }}" wire:key="task-{{ $task->id }}" data-id="{{ $task->id }}" data-priority="{{ $task->priority }}">
 
