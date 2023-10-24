@@ -95,9 +95,10 @@ class TaskManager extends Component
   public function reorderTasks($tasks)
   {
     foreach ($tasks as $key => $task) {
-      $id = (int)$task['id'];
+      $id = (int)$task['data_id'];
+      $new_priority = (int)$task['new_priority'];
       $query = Task::find($id);
-      $query->priority = $key;
+      $query->priority = $new_priority;
       $query->save();
     }
 
