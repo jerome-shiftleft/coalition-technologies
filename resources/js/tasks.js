@@ -71,8 +71,14 @@ $(function () {
     $('#create-task-form').find('input, textarea').val('');
     $('#create-task-modal').css('display', 'none');
     console.log('task created!');
-    console.log(event.detail.data);
-    console.log(event.detail.message);
+    console.log('tasks: ');
+    $('#task-list > .task').each(function (index) {
+      var id = $(this).data('id');
+      var order = $(this).data('order');
+      var title = $(this).find('.task-title').text();
+      console.log(`index[${index}] id:${id} order:${order} title:${title}`);      
+    });
+    
     swap_tasks();
   })
 

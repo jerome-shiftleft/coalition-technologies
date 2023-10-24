@@ -81,7 +81,8 @@ class TaskManager extends Component
 
       //$this->emit('taskCreated', $data);
       $this->dispatchBrowserEvent('taskCreated', [
-        'data' => $data        
+        'data' => $data,
+        'order' => $order
       ]);
     } // end of if (empty($data['project_id']) || empty($data['title']))
   }
