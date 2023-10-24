@@ -34,7 +34,7 @@ $(function () {
       $('#create-task-btn').prop('disabled', false);
     } else {
       console.log('Valid form data');
-      Livewire.emit('createTask', data);
+      Livewire.emitTo('task-manager', 'createTask', data);
     }
 
     //Livewire.emit('createTask', data);
@@ -46,18 +46,23 @@ $(function () {
     $('#update-task-modal').css('display', 'flex');
 
     var task = $(this).closest('.task');
-    var project_id = $('#select-project').val();
+    //var project_id = $('#select-project').val();
+    var project_id = parseInt(task.data('project-id'));
     var id = parseInt(task.data('id'));
     var title = task.find('.task-title').text();
     var description = task.find('.task-content').text();
     description = description.trim();
 
-    console.log(`tid: ${id} - pid: ${project_id} - ${title} - ${description}`);
+    //console.log(`tid: ${id} - pid: ${project_id} - ${title} - ${description}`);
+    console.log('id: ', id);
+    console.log('project id: ', project_id);
+    console.log('title: ', title);
+    console.log('description: ', description);
 
+    $('#update-task-id').val(id);
     $('#update-project-id').val(project_id);
     $('#update-title').val(title);
     $('#update-description').val(description);
-
 
   }); // end of $('.update-task-modal-btn').on('click', function () {
 
@@ -65,26 +70,75 @@ $(function () {
     $('#update-task-modal').css('display', 'none');
   });
 
+  $(document).on('submit', '#update-task-form', function (e) {
+    e.preventDefault();
+    var id = parseInt($('#update-task-id').val());
+    var new_project_id = parseInt($('#update-project-id').val());
+    var new_title = $('#update-title').val()
+    var new_description = $('#update-description').val();
+
+    var data = {
+      'id': id,
+      'project_id': new_project_id,
+      'title': new_title,
+      'description': new_description
+    }
+
+    console.log('task new data: ');
+    console.log(data);
+
+    Livewire.emitTo('task-manager', 'updateTask', data);
+
+  }); // end of $('#update-task-form').on('submit', function (e)
+
   window.addEventListener('selectProject', event => {
-    console.log('dispatch selectProject!');
     var project_id = $('#select-project').val();
-    $('#task-project-id').val(project_id);    
-    //swap_tasks();    
-  }) // end of window.addEventListener('selectProject', event => {  
+    $('#task-project-id').val(project_id);
+    console.log('tasks order: ');
+    $('#task-list > .task').each(function (index) {
+      var id = $(this).data('id');
+      var priority = $(this).data('priority');
+      var title = $(this).find('.task-title').text();
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);
+    }); // end of $('#task-list > .task').each(function (index) {
+  }); // end of window.addEventListener('selectProject', event => {  
 
   window.addEventListener('taskCreated', event => {
-    console.log('dispatch taskCreated');
+    console.log('Task Created!');
     $('#create-task-form').find('input, textarea').val('');
     $('#create-task-modal').css('display', 'none');
     console.log('task created!');
-    console.log('tasks: ');
+    console.log('tasks order: ');
     $('#task-list > .task').each(function (index) {
-      var data_id = $(this).data('id');
+      var id = $(this).data('id');
       var priority = $(this).data('priority');
       var title = $(this).find('.task-title').text();
-      console.log(`index[${index}] id:${data_id} priority:${priority} title:${title}`);      
-    });    
-    //swap_tasks();
-  }) // end of window.addEventListener('taskCreated', event => {  
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);
+    }); // end of $('#task-list > .task').each(function (index) {
+  }); // end of window.addEventListener('taskCreated', event => {
+
+  window.addEventListener('taskUpdated', event => {
+    console.log('Task Updated!');
+    $('#update-task-form').find('input, textarea').val('');
+    $('#update-task-modal').css('display', 'none');
+    console.log('tasks order: ');
+    $('#task-list > .task').each(function (index) {
+      var id = $(this).data('id');
+      var priority = $(this).data('priority');
+      var title = $(this).find('.task-title').text();
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);
+    }); // end of $('#task-list > .task').each(function (index) {
+  }); // end of window.addEventListener('taskCreated', event => {
+
+  window.addEventListener('listOrder', event => {
+    console.log('tasks order: ');
+    $('#task-list > .task').each(function (index) {
+      var id = $(this).data('id');
+      var priority = $(this).data('priority');
+      var title = $(this).find('.task-title').text();
+      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);
+    }); // end of $('#task-list > .task').each(function (index) {
+  }); // end of window.addEventListener('listOrder', event => {
+
 
 }); // end of initialize jquery

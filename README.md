@@ -55,6 +55,7 @@ If **`BROWSER_SYNC=true`** in .env, it will automatically reloads the browser af
 - [jquery](https://www.npmjs.com/package/jquery)
 - [jquery-ui](https://www.npmjs.com/package/jquery-ui)
 - [alpinejs](https://www.npmjs.com/package/alpinejs)
+- [livewire-sortable](https://www.npmjs.com/package/livewire-sortable)
 - [fontawesome](https://www.npmjs.com/package/@fortawesome/fontawesome-free)
 - [moment](https://www.npmjs.com/package/moment)
 - [select2](https://www.npmjs.com/package/select2)

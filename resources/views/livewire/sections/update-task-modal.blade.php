@@ -9,6 +9,8 @@
 
     <div class="form-inputs">
 
+      <input type="hidden" id="update-task-id">
+
       <select name="update_project_id" id="update-project-id" class="form-select">
         <option value="0">Select Project</option>
         @foreach ($projects as $project)
