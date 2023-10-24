@@ -1,7 +1,7 @@
 <div id="update-task-modal" class="task-modal">
   <form id="update-task-form">
 
-    <h2 class="modal-title">Create Task</h2>
+    <h2 class="modal-title">Update Task</h2>
 
     <div class="validation-error">
 
