@@ -33,7 +33,14 @@
   border: 1px solid $default-border-color;
   border-radius: 5px;
   margin-bottom: 5px;
-}
+
+  &.ui-sortable-helper {    
+    &, a {
+      color: #fff !important;
+    }
+    border-color: #fff;
+  }
+} // end of .task
 
 .task-header {
   @extend .flex-wrap;
