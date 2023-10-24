@@ -3,6 +3,7 @@ $(function () {
 
   $(document).on('click', '.expand-task', function () {
     console.log('toggling description');
+    $(this).closest('.task').find('.task-content').toggle();
   });
 
   $(document).on('click', '#create-task-modal-btn', function () {
