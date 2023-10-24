@@ -1,10 +1,7 @@
 <div id="task-manager">
   @include('livewire.sections.select-project')
-  
-  @isset($create_validation_error)
-    <div class="validation-error text-danger">{{ $create_validation_error }}</div>
-  @endisset
-
+  <x-validation-error :message="$create_validation_error" />
   @include('livewire.sections.task-list')
-  @include('livewire.sections.create-task-modal')  
+  @include('livewire.sections.create-task-modal')
+  @include('livewire.sections.update-task-modal')
 </div><!-- /#task-mananager -->

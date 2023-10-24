@@ -22,6 +22,7 @@ class TaskManager extends Component
   public function mount()
   {
     $this->projects = Project::all();
+    $this->create_validation_error = '';
   }
 
   public function updatedProjectId()
@@ -39,7 +40,8 @@ class TaskManager extends Component
       ->get();
 
     // Emit an event to execute JavaScript function swap_tasks()
-    $this->emit('selectProject');
+    //$this->emit('selectProject');
+    $this->dispatchBrowserEvent('selectProject');
   }
 
   public function deleteTask($task_id)
@@ -70,8 +72,10 @@ class TaskManager extends Component
         ->orderBy('created_at')
         ->get();
 
-      $this->emit('taskCreated', $data);
-    }
+      //$this->emit('taskCreated', $data);
+      $this->dispatchBrowserEvent('taskCreated', ['data' => $data]);
+
+    } // end of if (empty($data['project_id']) || empty($data['title']))
   }
 
   public function reorderTasks($tasks)

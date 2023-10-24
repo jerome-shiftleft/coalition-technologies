@@ -1,7 +1,7 @@
-<div id="create-task-modal" class="task-modal">
-  <form id="create-task-form">
+<div id="update-task-modal" class="task-modal">
+  <form id="update-task-form">
 
-    <h2 class="modal-title">Create Task</h2>
+    <h2 class="modal-title">Update Task</h2>
 
     <div class="validation-error">
 
@@ -10,7 +10,7 @@
     <div class="form-inputs">
 
       <select name="task_project_id" id="task-project-id" class="form-select" required>
-        <option value="">Select Project</option>
+        <option value="0">Select Project</option>
         @foreach ($projects as $project)
           <option value="{{ $project->id }}">{{ $project->title }}</option>
         @endforeach
@@ -23,9 +23,9 @@
     </div><!-- /.form-inputs -->
 
     <div class="modal-actions">
-      <button type="button" id="create-task-cancel-btn" class="btn btn-secondary">Cancel</button>
-      <button id="create-task-btn" type="submit" class="btn btn-primary">Create</button>
+      <button type="button" id="update-task-cancel-btn" class="btn btn-secondary">Cancel</button>
+      <button id="update-task-btn" type="submit" class="btn btn-primary">Save</button>
     </div><!-- /.modal-actions -->
 
   </form>
-</div><!-- /#create-task-modal -->
+</div><!-- /#update-task-modal -->
