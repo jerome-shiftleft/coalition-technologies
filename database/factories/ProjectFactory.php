@@ -14,7 +14,7 @@ class ProjectFactory extends Factory
     public function definition()
     {        
         return [
-            'title' => $this->faker->word(3)
+            'title' => $this->faker->unique()->word()
         ];
     }
 }
