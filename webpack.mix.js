@@ -27,7 +27,8 @@ mix.extract([
 mix.autoload({
   jquery: ['jquery', 'jQuery', '$', 'window.jQuery'],
   Popper: ['popper', 'Popper', 'popper.js'],
-  popper: ['Popper', 'popper.js']  
+  popper: ['Popper', 'popper.js'],
+  lodash: ['_']  
 });
 
 var sass_debug = process.env.SASS_DEBUG;

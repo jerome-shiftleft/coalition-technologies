@@ -7,7 +7,8 @@ const swap_tasks = () => {
     revert: 150,
     update: function() {
       console.log('sorting...');
-      update_tasks_priority();
+      const debounce_tasks_priority = _.debounce(update_tasks_priority, 500);
+      debounce_tasks_priority();
     }
   });
 } // end of swap_tasks()
