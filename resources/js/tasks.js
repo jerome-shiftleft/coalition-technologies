@@ -69,7 +69,7 @@ $(function () {
     console.log('dispatch selectProject!');
     var project_id = $('#select-project').val();
     $('#task-project-id').val(project_id);    
-    swap_tasks();    
+    //swap_tasks();    
   }) // end of window.addEventListener('selectProject', event => {  
 
   window.addEventListener('taskCreated', event => {
@@ -85,7 +85,7 @@ $(function () {
       console.log(`index[${index}] id:${data_id} priority:${priority} title:${title}`);      
     });
     
-    swap_tasks();
+    //swap_tasks();
   })
 
 }); // end of initialize jquery

@@ -17,6 +17,7 @@
         "imagemin": "^8.0.1",
         "imagemin-webp": "^8.0.0",
         "laravel-mix": "^6.0.6",
+        "livewire-sortable": "^0.2.2",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "sass": "^1.66.1",

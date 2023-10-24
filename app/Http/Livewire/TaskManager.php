@@ -88,9 +88,20 @@ class TaskManager extends Component
     } // end of if (empty($data['project_id']) || empty($data['title']))
   } // end of public function createTask($data)
 
-  public function updateTask($data) {
-
+  public function updateTask($data)
+  {
   } // end of public function updateTask($data)
+
+  public function updateTaskOrder($sortedTasks)
+  {
+    foreach ($sortedTasks as $task) {
+      Task::where('id', $task['value'])->update(['priority' => $task['order']]);
+    }
+    $this->tasks = Task::where('project_id', $this->project_id)
+      ->orderBy('priority')
+      ->orderBy('created_at')
+      ->get();
+  }
 
   public function reorderTasks($tasks)
   {

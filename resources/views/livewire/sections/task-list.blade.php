@@ -1,9 +1,9 @@
 @isset($tasks)
-  <div id="task-list">
+  <div id="task-list" wire:sortable="updateTaskOrder">
     @foreach ($tasks as $task)
-      <div class="task" data-id="{{ $task->id }}" data-priority="{{ $task->priority }}">
+      <div class="task" wire:sortable.item="{{ $task->id }}" wire:key="task-{{ $task->id }}" data-id="{{ $task->id }}" data-priority="{{ $task->priority }}">
 
-        <div class="task-header">
+        <div wire:sortable.handle class="task-header">
 
           <h3 class="task-title">{{ $task->title }}</h3>
 
