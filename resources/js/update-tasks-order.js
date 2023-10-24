@@ -1,5 +1,5 @@
 const update_tasks_order = () => {
-  //console.log('updating tasks order...');
+  console.log('updating tasks order...');
 
   var tasks = []
 
