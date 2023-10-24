@@ -72,6 +72,7 @@ $(function () {
     $('#create-task-modal').css('display', 'none');
     console.log('task created!');
     console.log(event.detail.data);
+    console.log(event.detail.message);
     swap_tasks();
   })
 
