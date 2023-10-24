@@ -55,14 +55,21 @@ class TaskManager extends Component
 
   public function createTask($data)
   {
-
     if (empty($data['project_id']) || empty($data['title'])) {
       $this->create_validation_error = 'Please select a project and provide a title.';
     } else {
+
+      $highest_order = Task::where('project_id', $data['project_id'])
+        ->orderBy('order', 'desc')
+        ->value('order');
+
+      $order = $highest_order + 1;
+
       Task::create([
         'title'       => $data['title'],
         'project_id'  => $data['project_id'],
-        'description' => $data['description']
+        'description' => $data['description'],
+        'order'       => $order
       ]);
 
       $this->project_id = $data['project_id'];
@@ -73,8 +80,9 @@ class TaskManager extends Component
         ->get();
 
       //$this->emit('taskCreated', $data);
-      $this->dispatchBrowserEvent('taskCreated', ['data' => $data]);
-
+      $this->dispatchBrowserEvent('taskCreated', [
+        'data' => $data        
+      ]);
     } // end of if (empty($data['project_id']) || empty($data['title']))
   }
 
