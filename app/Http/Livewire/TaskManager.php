@@ -58,7 +58,7 @@ class TaskManager extends Component
     if (empty($data['project_id']) || empty($data['title'])) {
       $this->validation_error = 'Please select a project and provide a title.';
     } else {
-      $this->validation_error = null;
+      $this->validation_error = '';
 
       $highest_priority = Task::where('project_id', $data['project_id'])
         ->orderBy('priority', 'desc')
@@ -80,7 +80,7 @@ class TaskManager extends Component
         ->orderBy('created_at')
         ->get();
 
-      //$this->emit('taskCreated', $data);
+
       $this->dispatchBrowserEvent('taskCreated', [
         'data' => $data,
         'priority' => $priority
@@ -90,6 +90,27 @@ class TaskManager extends Component
 
   public function updateTask($data)
   {
+    if (empty($data['project_id']) || empty($data['title'])) {
+      $this->validation_error = 'Please select a project and provide a title.';
+    } else {
+      $this->validation_error = '';
+
+      $task = Task::find($data['id']);
+      $task->project_id = $data['project_id'];
+      $task->title = $data['title'];
+      $task->description = $data['description'];
+
+      $task->save();
+
+      $this->tasks = Task::where('project_id', $this->project_id)
+        ->orderBy('priority')
+        ->orderBy('created_at')
+        ->get();
+
+      $this->dispatchBrowserEvent('taskUpdated', [
+        'data' => $data
+      ]);
+    } // end of if (empty($data['project_id']) || empty($data['title']))
   } // end of public function updateTask($data)
 
   public function reorderTasks($sortedTasks)
@@ -103,7 +124,6 @@ class TaskManager extends Component
       ->get();
 
     $this->dispatchBrowserEvent('listOrder');
-
   } // end of public function reorderTasks($sortedTasks)
 
   public function render()
