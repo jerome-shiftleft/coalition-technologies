@@ -45,7 +45,7 @@
 .task-header {
   @extend .flex-wrap;
   justify-content: space-between;
-  //cursor: move;
+  cursor: move;
 }
 
 .task-title {
