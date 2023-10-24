@@ -15,7 +15,7 @@ class TaskManager extends Component
   public $task_id;
   public $title;
   public $description;
-  public $create_validation_error;
+  public $validation_error;
 
   protected $listeners = ['createTask', 'reorderTasks'];
 
@@ -56,8 +56,9 @@ class TaskManager extends Component
   public function createTask($data)
   {
     if (empty($data['project_id']) || empty($data['title'])) {
-      $this->create_validation_error = 'Please select a project and provide a title.';
+      $this->validation_error = 'Please select a project and provide a title.';
     } else {
+      $this->validation_error = null;
 
       $highest_order = Task::where('project_id', $data['project_id'])
         ->orderBy('order', 'desc')

@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="icon" type="image/x-icon" href="/icon.png">
+  {{-- <link rel="apple-touch-icon" href="icon.png"> --}}
+  {{-- <link rel="icon" type="image/x-icon" href="/icon.png"> --}}
   @yield('meta-dynamic')
 
   @livewireStyles
