@@ -3,6 +3,6 @@
 <script src="{{ mix('js/app.js') }}"></script>
 
 <script>
-  // place footer scripts in resources/js/footer-scripts.js
-  // but feel free to add additional footer scripts here
+  // Please manage scripts in resources/js
+  // but feel free to add additional scripts here
 </script>

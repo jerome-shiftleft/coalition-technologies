@@ -6,10 +6,11 @@ const update_tasks_order = () => {
   console.log('tasks order: ');
   $('#task-list > .task').each(function (index) {
     var id = $(this).data('id');
-    var title = $(this).find('.task-title').text();    
-    console.log(`[${index}] - ${id}. ${title}`);
+    var order = $(this).data('order');
+    var title = $(this).find('.task-title').text();
+    console.log(`index[${index}] id:${id} order:${order} title:${title}`);
     tasks.push({ id, title });
-  });  
+  });
 
   Livewire.emitTo('task-manager', 'reorderTasks', tasks);
 }
