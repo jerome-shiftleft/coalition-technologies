@@ -83,9 +83,8 @@ $(function () {
       var priority = $(this).data('priority');
       var title = $(this).find('.task-title').text();
       console.log(`index[${index}] id:${data_id} priority:${priority} title:${title}`);      
-    });
-    
+    });    
     //swap_tasks();
-  })
+  }) // end of window.addEventListener('taskCreated', event => {  
 
 }); // end of initialize jquery
