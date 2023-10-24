@@ -17,12 +17,12 @@ class TaskManager extends Component
   public $description;
   public $validation_error;
 
-  protected $listeners = ['createTask', 'reorderTasks'];
+  protected $listeners = ['createTask', 'updateTask', 'reorderTasks'];
 
   public function mount()
   {
     $this->projects = Project::all();
-    $this->create_validation_error = '';
+    $this->validation_error = '';
   }
 
   public function updatedProjectId()
@@ -86,7 +86,11 @@ class TaskManager extends Component
         'order' => $order
       ]);
     } // end of if (empty($data['project_id']) || empty($data['title']))
-  }
+  } // end of public function createTask($data)
+
+  public function updateTask($data) {
+
+  } // end of public function updateTask($data)
 
   public function reorderTasks($tasks)
   {

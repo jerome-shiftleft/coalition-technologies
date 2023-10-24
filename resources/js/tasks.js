@@ -50,8 +50,14 @@ $(function () {
     var id = parseInt(task.data('id'));
     var title = task.find('.task-title').text();
     var description = task.find('.task-content').text();
+    description = description.trim();
 
-    //console.log(`tid: ${id} - pid: ${project_id} - ${title} - ${description}`);
+    console.log(`tid: ${id} - pid: ${project_id} - ${title} - ${description}`);
+
+    $('#update-project-id').val(project_id);
+    $('#update-title').val(title);
+    $('#update-description').val(description);
+    
 
   }); // end of $('.update-task-modal-btn').on('click', function () {
 
