@@ -69,7 +69,20 @@ $(function () {
     console.log('dispatch selectProject!');
     var project_id = $('#select-project').val();
     $('#task-project-id').val(project_id);
+    
     swap_tasks();
+    var tasks = []
+
+    console.log('tasks priority: ');
+    $('#task-list > .task').each(function (index) {
+      var data_id = $(this).data('id');
+      var new_priority = index;
+      var title = $(this).find('.task-title').text();
+      console.log(`index[${index}] id:${data_id} priority:${new_priority} title:${title}`);      
+      tasks.push({ data_id, new_priority });
+    });
+
+    Livewire.emitTo('task-manager', 'reorderTasks', tasks);
   }) // end of window.addEventListener('selectProject', event => {  
 
   window.addEventListener('taskCreated', event => {
@@ -79,10 +92,10 @@ $(function () {
     console.log('task created!');
     console.log('tasks: ');
     $('#task-list > .task').each(function (index) {
-      var id = $(this).data('id');
+      var data_id = $(this).data('id');
       var priority = $(this).data('priority');
       var title = $(this).find('.task-title').text();
-      console.log(`index[${index}] id:${id} priority:${priority} title:${title}`);      
+      console.log(`index[${index}] id:${data_id} priority:${priority} title:${title}`);      
     });
     
     swap_tasks();
