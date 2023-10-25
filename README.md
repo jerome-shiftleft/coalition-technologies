@@ -4,27 +4,49 @@
 
 ## Installation
 
-- Download/clone this [repository](https://github.com/jerome-shiftleft/coalition-technologies)
-- Copy .env.example **`cp .env.example .env`**
-- Update `.env` file. Change `APP_URL` to match your virtual host url.<br>
-This is **required** if you want to use **browsersync**
-- `composer install`
-- `php artisan key:generate`
-- `npm install`
-- `npm run dev`
+ Download/clone this [repository](https://github.com/jerome-shiftleft/coalition-technologies)
+```
+git clone git@github.com:jerome-shiftleft/coalition-technologies.git taskmanager
+```
+
+Copy ***.env.example*** file and name it ***.env***
+```
+cp .env.example .env
+```
+Update `.env` file. Change `APP_URL` to match your virtual host url.<br>
+This is **required** if you want to use **browsersync (hot reload)**
+```
+APP_NAME=coalition-technologies
+APP_ENV=local
+APP_KEY=base64:6fNrr8goMgRlbftn4riYNwUTe/8HXQ3jzCHuKTEolgk=
+APP_DEBUG=true
+APP_URL=https://coalition-technologies.local
+```
+Run the following commands<br>
+`composer install`<br>
+`php artisan key:generate`<br>
+`npm install`<br>
+`npm run dev`
 
 ### Setup Database
-- Create a database.
+- Create a database. below are sample commands
+```
+mysql -u root -p --default-character-set=utf8mb4;
+create database task_manager character set utf8mb4 collate utf8mb4_unicode_ci;
+```
 - Update `.env` file to match your database.
 - Run `php artisan migrate --seed` to generate dummy data for the database.
-- Run `php artisan migrate:fresh --seed` or `source seed.sh` if you want to regenerate new dummy data.
-- The generated dummy data are random latin words. If you want english dummy data that makes sense, you can **import database/dump/test.sql**
+- Run `php artisan migrate:fresh --seed` or `source seed.sh` if you want to regenerate fresh new dummy data.
+- The generated dummy data are random latin words. If you want english dummy data that makes sense, you can import **database/dump/test.sql**
 
 ## Task Manager Usage
 
-### Select Project
+### Viewing Tasks
+Select a project first then the tasks under that project will load.
 
 <img src="public/images/screenshots/select-project.webp" alt="Select Project" width="360"/>
+
+<img src="public/images/screenshots/tasks-list.webp" alt="Task lists" width="360"/>
 
 ### Create Task
 Click the plus button and the create task modal will popup.
