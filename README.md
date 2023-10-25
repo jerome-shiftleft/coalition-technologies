@@ -1,13 +1,15 @@
 # Task Manager
 
-**Note:** Please view this readme on [github](https://github.com/jerome-shiftleft/coalition-technologies) so you can view the embedded images and view the intended readme style/format.
+**NOTE:** Please view this readme on [github](https://github.com/jerome-shiftleft/coalition-technologies) so you can view the embedded images and view the intended readme style/format.
 
 ## Installation
 
  Download/clone this [repository](https://github.com/jerome-shiftleft/coalition-technologies)
+
+ **NOTE:** To avoid running into command errors, please use linux-compatible terminal such as git bash
 ```
-git clone git@github.com:jerome-shiftleft/coalition-technologies.git taskmanager;
-cd taskmanager;
+git clone git@github.com:jerome-shiftleft/coalition-technologies.git taskmanager
+cd taskmanager
 ```
 
 Copy ***.env.example*** file and name it ***.env***
@@ -21,18 +23,18 @@ APP_URL=https://taskmanager.local
 ```
 Install composer and node module packages by running the following commands.
 ```
-composer install;
-php artisan key:generate;
-npm install;
-npm run dev;
+composer install
+php artisan key:generate
+npm install
+npm run dev
 ```
 ### Setup Database
 Create a database. Below are sample commands
 ```
-mysql -u root -p --default-character-set=utf8mb4;
+mysql -u root -p --default-character-set=utf8mb4
 ```
 ```
-create database taskmanager character set utf8mb4 collate utf8mb4_unicode_ci;
+create database taskmanager character set utf8mb4 collate utf8mb4_unicode_ci
 ```
 Update `.env` file to match your database.
 ```
@@ -47,7 +49,7 @@ Run **`php artisan migrate --seed`** to generate dummy data for the database.<br
 Run **`php artisan migrate:fresh --seed`** or **`source seed.sh`** if you want to regenerate fresh new dummy data.<br>
 The generated dummy data are random latin words. If you want english dummy data that makes sense, you can import ***database/dump/test.sql***
 ```
-mysql -u root -p taskmanager;
+mysql -u root -p taskmanager
 ```
 ```
 source database/dump/test.sql;
