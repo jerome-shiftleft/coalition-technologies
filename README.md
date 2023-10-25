@@ -15,7 +15,7 @@ This is **required** if you want to use **browsersync**
 - Create a database.
 - Update `.env` file to match your database.
 - Run `php artisan migrate --seed` to generate dummy data for the database.
-- Run `php artisan migrate:fresh --seed` or or `source seed.sh` if you want to regenerate new dummy data.
+- Run `php artisan migrate:fresh --seed` or `source seed.sh` if you want to regenerate new dummy data.
 - The generated dummy data are random latin words. If you want english dummy data that makes sense, you can import database/dump/test.sql
 
 ## Compiling Assets (Laravel Mix)
