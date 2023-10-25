@@ -30,15 +30,21 @@
 
 .task {
   padding: 10px;
+  width: 360px;
   //border: 1px solid $default-border-color;
   border-radius: 5px;
   margin-bottom: 5px;
   background-color: rgba(255,255,255, 0.7);
   @extend .shadow-md;
   border: 1px solid transparent;
+  
   &.ui-sortable-helper,
   &.draggable--over {        
     border: 1px solid $dark-secondary;
+  }
+
+  @media (max-width: 449px) {
+    width: 285px;
   }
 
 } // end of .task
