@@ -5,12 +5,11 @@
 ## Installation
 
  Download/clone this [repository](https://github.com/jerome-shiftleft/coalition-technologies)
- 
+
  **NOTE:** To avoid running into command errors, please use linux-compatible terminal such as git bash
 ```
 git clone git@github.com:jerome-shiftleft/coalition-technologies.git taskmanager
 cd taskmanager
-
 ```
 
 Copy ***.env.example*** file and name it ***.env***
@@ -28,7 +27,6 @@ composer install
 php artisan key:generate
 npm install
 npm run dev
-
 ```
 ### Setup Database
 Create a database. Below are sample commands
