@@ -6,7 +6,8 @@
 
  Download/clone this [repository](https://github.com/jerome-shiftleft/coalition-technologies)
 ```
-git clone git@github.com:jerome-shiftleft/coalition-technologies.git taskmanager
+git clone git@github.com:jerome-shiftleft/coalition-technologies.git taskmanager;
+cd taskmanager;
 ```
 
 Copy ***.env.example*** file and name it ***.env***
