@@ -30,6 +30,8 @@ npm run dev;
 Create a database. Below are sample commands
 ```
 mysql -u root -p --default-character-set=utf8mb4;
+```
+```
 create database taskmanager character set utf8mb4 collate utf8mb4_unicode_ci;
 ```
 Update `.env` file to match your database.
@@ -46,6 +48,8 @@ Run **`php artisan migrate:fresh --seed`** or **`source seed.sh`** if you want t
 The generated dummy data are random latin words. If you want english dummy data that makes sense, you can import ***database/dump/test.sql***
 ```
 mysql -u root -p taskmanager;
+```
+```
 source database/dump/test.sql;
 ```
 
