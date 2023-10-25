@@ -3,7 +3,8 @@ $(function () {
 
   $(document).on('click', '.expand-task', function () {
     console.log('toggling description');
-    $(this).closest('.task').find('.task-content').toggle();
+    //$(this).closest('.task').find('.task-content').toggle();
+    $(this).closest('.task').toggleClass('expanded-task');
   });
 
   $(document).on('click', '#create-task-modal-btn', function () {
@@ -52,6 +53,7 @@ $(function () {
     var title = task.find('.task-title').text();
     var description = task.find('.task-content').text();
     description = description.trim();
+    description = (description == 'No task description.') ? '' : description;
 
     //console.log(`tid: ${id} - pid: ${project_id} - ${title} - ${description}`);
     console.log('id: ', id);

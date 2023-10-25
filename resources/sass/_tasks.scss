@@ -68,10 +68,28 @@
 }
 
 .task-content {
-  display: none;
-  padding-top: 10px;
+  max-height: 0;
+  padding-top: 0;
   font-size: 13px;
+  overflow-y: hidden;
+  transition: transition(max-height), transition(padding-top);
 }
+
+.expand-task .fa-angle-down {
+  transform: rotate(0);
+  transition: transition(transform);
+  transform-origin: center center;
+}
+
+.task.expanded-task {
+  .task-content {    
+    max-height: 50vh;
+    padding-top: 10px;
+  }
+  .expand-task .fa-angle-down {
+    transform: rotate(180deg);    
+  }  
+} // end of .task.expanded-task
 
 #create-task-modal-btn {  
   margin-left: 10px;

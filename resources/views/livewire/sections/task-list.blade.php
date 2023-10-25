@@ -26,7 +26,11 @@
         </div><!-- /.task-header -->
 
         <div class="task-content" >
-          {{ $task->description }}
+          @if(empty($task->description))
+            No task description.
+          @else
+            {{ $task->description }}
+          @endif
         </div><!-- /.task-content -->
 
       </div><!-- /.task -->

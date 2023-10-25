@@ -38,9 +38,7 @@ class TaskManager extends Component
       ->orderBy('priority')
       ->orderBy('created_at')
       ->get();
-
-    // Emit an event to execute JavaScript function swap_tasks()
-    //$this->emit('selectProject');
+    
     $this->dispatchBrowserEvent('selectProject');
   }
 

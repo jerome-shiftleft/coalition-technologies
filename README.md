@@ -13,7 +13,7 @@ Copy ***.env.example*** file and name it ***.env***
 ```
 cp .env.example .env
 ```
-Update `.env` file. Change `APP_URL` to match your virtual host url.<br>
+Update ***.env*** file. Change `APP_URL` to match your virtual host url.<br>
 This is **required** if you want to use **browsersync (hot reload)**
 ```
 APP_NAME=coalition-technologies
@@ -30,7 +30,7 @@ npm install;
 npm run dev;
 ```
 ### Setup Database
-Create a database. below are sample commands
+Create a database. Below are sample commands
 ```
 mysql -u root -p --default-character-set=utf8mb4;
 create database taskmanager character set utf8mb4 collate utf8mb4_unicode_ci;
@@ -44,8 +44,8 @@ DB_DATABASE=taskmanager
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-Run `php artisan migrate --seed` to generate dummy data for the database.<br>
-Run `php artisan migrate:fresh --seed` or `source seed.sh` if you want to regenerate fresh new dummy data.<br>
+Run **`php artisan migrate --seed`** to generate dummy data for the database.<br>
+Run **`php artisan migrate:fresh --seed`** or **`source seed.sh`** if you want to regenerate fresh new dummy data.<br>
 The generated dummy data are random latin words. If you want english dummy data that makes sense, you can import ***database/dump/test.sql***
 ```
 mysql -u root -p taskmanager;
@@ -55,24 +55,31 @@ source database/dump/test.sql;
 ## Task Manager Usage
 
 ### Viewing Tasks
-Select a project first then the tasks under that project will load.
+Select a project first then the tasks under that project will show.
 
 <img src="public/images/screenshots/select-project.webp" alt="Select Project" width="360"/>
 
 <img src="public/images/screenshots/tasks-list.webp" alt="Task lists" width="360"/><br><br>
 Click the caret icon &nbsp;&nbsp;<img src="public/images/screenshots/caret-down.webp" alt="Task lists" width="30"/> &nbsp;&nbsp; to view the task description.
 
+<img src="public/images/screenshots/task-description.webp" alt="Task description" width="360"/>
+
 ### Create Task
-Click the plus button and the create task modal will popup.
+Click the plus (+) button and the create task modal will popup.
 
 <img src="public/images/screenshots/create-task-btn.webp" alt="Create task button" width="100"/>
 
 <img src="public/images/screenshots/create-task-modal.webp" alt="Create task modal" width="360"/>
 
 ### Edit Task
-Click the pencil icon &nbsp;&nbsp;<img src="public/images/screenshots/edit-task-btn.webp" alt="Create task modal" width="70"/>&nbsp;&nbsp; on the task you want to edit and the update task modal will popup.<br>
+Click the pen icon &nbsp;&nbsp;<img src="public/images/screenshots/edit-task-btn.webp" alt="Create task modal" width="70"/>&nbsp;&nbsp; on the task you want to edit and the update task modal will popup.<br>
 
 <img src="public/images/screenshots/update-task-modal.webp" alt="Create task modal" width="360"/>
+
+### Sorting Task Priority
+Drag the task title to reorder the task priority.
+
+<img src="public/images/screenshots/task-priority.webp" alt="Create task modal" width="360"/>
 
 ## Compiling Assets (Laravel Mix)
 
@@ -95,6 +102,21 @@ If **`BROWSER_SYNC=true`** in .env, it will automatically reloads the browser af
 - public/js/app.js.LICENSE.txt
 - public/js/vendor.js.LICENSE.txt
 
+## Code Review
+This project utilized laravel mix and laravel livewire.
+Here are the location of some important files/folders.
+
+entry page: ***/resources/views/dashboard/index.blade.php***<br>
+layout: ***/resources/views/layouts/dashboard.blade.php***
+
+livewire classes: ***/app/Http/livewire***<br>
+livewire views: ***/resources/views/livewire***
+
+js files: ***/resources/js***<br>
+sass files: ***/resources/sass***
+
+laravel mix config: ***/webpack.mix.js***
+
 ## Additional Packages Installed
 
 ### Composer Packages
@@ -114,7 +136,6 @@ If **`BROWSER_SYNC=true`** in .env, it will automatically reloads the browser af
 - [alpinejs](https://www.npmjs.com/package/alpinejs)
 - [livewire-sortable](https://www.npmjs.com/package/livewire-sortable)
 - [fontawesome](https://www.npmjs.com/package/@fortawesome/fontawesome-free)
-- [moment](https://www.npmjs.com/package/moment)
 - [select2](https://www.npmjs.com/package/select2)
 
 ## License
