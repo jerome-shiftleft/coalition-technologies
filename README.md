@@ -34,7 +34,7 @@ Create a database. Below are sample commands
 mysql -u root -p --default-character-set=utf8mb4
 ```
 ```
-create database taskmanager character set utf8mb4 collate utf8mb4_unicode_ci
+create database taskmanager character set utf8mb4 collate utf8mb4_unicode_ci;
 ```
 Update `.env` file to match your database.
 ```
