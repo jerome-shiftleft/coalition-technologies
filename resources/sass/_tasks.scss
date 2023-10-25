@@ -69,10 +69,10 @@
 
 .task-content {
   max-height: 0;
-  padding-top: 10px;
+  padding-top: 0;
   font-size: 13px;
   overflow-y: hidden;
-  transition: max-height 0.15s ease-in-out;
+  transition: transition(max-height), transition(padding-top);
 }
 
 .expand-task .fa-angle-down {
@@ -84,6 +84,7 @@
 .task.expanded-task {
   .task-content {    
     max-height: 50vh;
+    padding-top: 10px;
   }
   .expand-task .fa-angle-down {
     transform: rotate(180deg);    
