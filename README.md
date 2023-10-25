@@ -19,8 +19,17 @@ This is **required** if you want to use **browsersync**
 - The generated dummy data are random latin words. If you want english dummy data that makes sense, you can **import database/dump/test.sql**
 
 ## Task Manager Usage
-- Select Project
-<img src="public/images/screenshots/select-project.jpg" alt="Select Project" style="display:block; width: 100%; max-width: 360px" />
+
+### Select Project
+
+<img src="public/images/screenshots/select-project.webp" alt="Select Project" width="360"/>
+
+### Create Task
+Click the plus button and the create task modal will popup.
+
+<img src="public/images/screenshots/create-task-btn.webp" alt="Create task button" width="100"/>
+
+<img src="public/images/screenshots/create-task-modal.webp" alt="Create task modal" width="360"/>
 
 ## Compiling Assets (Laravel Mix)
 
