@@ -15,12 +15,8 @@ Copy ***.env.example*** file and name it ***.env***
 cp .env.example .env
 ```
 Update ***.env*** file. Change `APP_URL` to match your virtual host url.<br>
-This is **required** if you want to use **browsersync (hot reload)**
+This is **optional but highly recommended** if you want to utilize **browsersync (hot reload)** when using **`npm run watch`**
 ```
-APP_NAME=coalition-technologies
-APP_ENV=local
-APP_KEY=base64:6fNrr8goMgRlbftn4riYNwUTe/8HXQ3jzCHuKTEolgk=
-APP_DEBUG=true
 APP_URL=https://taskmanager.local
 ```
 Install composer and node module packages by running the following commands.
