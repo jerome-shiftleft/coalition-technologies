@@ -22,7 +22,7 @@ APP_KEY=base64:6fNrr8goMgRlbftn4riYNwUTe/8HXQ3jzCHuKTEolgk=
 APP_DEBUG=true
 APP_URL=https://coalition-technologies.local
 ```
-Run the following commands<br>
+Install composer and node module packages by running the following commands.
 ```
 composer install;
 php artisan key:generate;
@@ -67,6 +67,9 @@ Click the plus button and the create task modal will popup.
 <img src="public/images/screenshots/create-task-btn.webp" alt="Create task button" width="100"/>
 
 <img src="public/images/screenshots/create-task-modal.webp" alt="Create task modal" width="360"/>
+
+### Edit Task
+Click the pencil icon &nbsp;&nbsp;<img src="public/images/screenshots/edit-task-btn.webp" alt="Create task modal" width="70"/> on the task you want to edit and the update task modal will popup.
 
 ## Compiling Assets (Laravel Mix)
 
