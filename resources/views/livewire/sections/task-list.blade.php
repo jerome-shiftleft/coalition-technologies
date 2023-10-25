@@ -3,9 +3,9 @@
     @foreach ($tasks as $task)
       <div class="task" wire:sortable.item="{{ $task->id }}" wire:key="task-{{ $task->id }}" data-id="{{ $task->id }}" data-project-id="{{ $task->project_id }}" data-priority="{{ $task->priority }}">
 
-        <div wire:sortable.handle class="task-header">
+        <div class="task-header">
 
-          <h3 class="task-title">{{ $task->title }}</h3>
+          <h3 wire:sortable.handle class="task-title">{{ $task->title }}</h3>
 
           <div class="task-header-actions">
 

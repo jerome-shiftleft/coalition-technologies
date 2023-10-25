@@ -30,33 +30,35 @@
 
 .task {
   padding: 10px;
-  border: 1px solid $default-border-color;
+  //border: 1px solid $default-border-color;
   border-radius: 5px;
   margin-bottom: 5px;
-
+  background-color: rgba(255,255,255, 0.7);
+  @extend .shadow-md;
+  border: 1px solid transparent;
   &.ui-sortable-helper,
-  &.draggable--over {    
-    &, a {
-      color: #fff !important;
-    }
-    border-color: #fff;
+  &.draggable--over {        
+    border: 1px solid $dark-secondary;
   }
+
 } // end of .task
 
 .task-header {
-  @extend .flex-wrap;
-  justify-content: space-between;
-  cursor: move;
+  display: flex;
+  justify-content: space-between;  
 }
 
 .task-title {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 0;
+  flex-grow: 1;
+  cursor: move;
 }
 
 .task-header-actions {
   display: flex;
+  flex-grow: 0;
   &, a {
     color: $default-font-color;
   }
@@ -67,6 +69,8 @@
 
 .task-content {
   display: none;
+  padding-top: 10px;
+  font-size: 13px;
 }
 
 #create-task-modal-btn {  
@@ -78,6 +82,18 @@
 }
 
 .dashboard.dark {
+
+  .task {
+    background-color: rgba(35, 34, 39, 0.6);
+    &.ui-sortable-helper,
+    &.draggable--over {    
+      &, a {
+        color: #fff !important;
+      }
+      border: 1px solid #fff;
+    }
+  } // end of .task
+
   .task-header-actions {
     &, a {
       color: $light-font-color;
