@@ -11,14 +11,14 @@
 
       <input type="hidden" id="update-task-id">
 
-      <select name="update_project_id" id="update-project-id" class="form-select">
-        <option value="0">Select Project</option>
+      <select name="update_project_id" id="update-project-id" class="form-select" required>
+        <option value="">Select Project</option>
         @foreach ($projects as $project)
           <option value="{{ $project->id }}">{{ $project->title }}</option>
         @endforeach
       </select>
 
-      <input type="text" id="update-title" name="title" class="form-control" placeholder="Title">
+      <input type="text" id="update-title" name="title" class="form-control" placeholder="Title" required>
 
       <textarea id="update-description" name="description" class="form-control" rows="4" placeholder="Description"></textarea>
 

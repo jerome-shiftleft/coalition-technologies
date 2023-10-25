@@ -138,7 +138,7 @@ CREATE TABLE `projects` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +147,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES (1,NULL,NULL,'Web Development'),(2,NULL,NULL,'Web Design'),(3,NULL,NULL,'SEO'),(4,NULL,NULL,'Marketing');
+INSERT INTO `projects` VALUES (1,'2023-10-24 16:14:35','2023-10-24 16:14:35','Web Design'),(2,'2023-10-24 16:14:44','2023-10-24 16:14:44','Web Development'),(3,'2023-10-24 16:14:56','2023-10-24 16:14:56','SEO');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,7 +169,7 @@ CREATE TABLE `tasks` (
   PRIMARY KEY (`id`),
   KEY `tasks_project_id_foreign` (`project_id`),
   CONSTRAINT `tasks_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +178,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (1,1,'2023-10-24 11:12:40','2023-10-24 11:43:43','webdev task 1','',0),(2,1,'2023-10-24 11:12:48','2023-10-24 11:43:48','webdev task 2','',1),(3,1,'2023-10-24 11:12:56','2023-10-24 11:43:48','webdev task 3','',2),(4,2,'2023-10-24 11:13:09','2023-10-24 11:13:09','create layout using figma','',1);
+INSERT INTO `tasks` VALUES (1,1,'2023-10-24 16:17:02','2023-10-24 16:18:24','New color scheme','Change color scheme on this website xxxxxx',1),(2,1,'2023-10-24 16:17:54','2023-10-24 16:17:54','Create new design and workflow','Create new design and workflow using figma on our new client\'s website',2),(3,2,'2023-10-24 16:20:23','2023-10-24 16:25:34','Implement livewire','Please implement laravel livewire on this website.',1),(4,2,'2023-10-24 16:20:48','2023-10-24 16:25:34','Study Laravel 10','research and study laravel 10, vite, livewire v3, alpine js',2),(5,2,'2023-10-24 16:23:16','2023-10-24 16:25:34','Study React','',3),(6,2,'2023-10-24 16:23:24','2023-10-24 16:25:34','Study Vue','',4),(7,2,'2023-10-24 16:24:48','2023-10-24 16:25:34','Study Electron','',5),(8,2,'2023-10-24 16:25:00','2023-10-24 16:25:34','Study Dart and Flutter','',6);
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-25  3:45:27
+-- Dump completed on 2023-10-25  8:28:08
