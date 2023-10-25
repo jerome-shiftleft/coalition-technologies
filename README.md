@@ -1,6 +1,6 @@
 # Task Manager
 
-**Note:** Please view this readme in [github](https://github.com/jerome-shiftleft/coalition-technologies) so you can view the embedded images
+**Note:** Please view this readme on [github](https://github.com/jerome-shiftleft/coalition-technologies) so you can view the embedded images and view the intended readme style/format.
 
 ## Installation
 
@@ -23,21 +23,34 @@ APP_DEBUG=true
 APP_URL=https://coalition-technologies.local
 ```
 Run the following commands<br>
-`composer install`<br>
-`php artisan key:generate`<br>
-`npm install`<br>
-`npm run dev`
-
+```
+composer install;
+php artisan key:generate;
+npm install;
+npm run dev;
+```
 ### Setup Database
-- Create a database. below are sample commands
+Create a database. below are sample commands
 ```
 mysql -u root -p --default-character-set=utf8mb4;
-create database task_manager character set utf8mb4 collate utf8mb4_unicode_ci;
+create database taskmanager character set utf8mb4 collate utf8mb4_unicode_ci;
 ```
-- Update `.env` file to match your database.
-- Run `php artisan migrate --seed` to generate dummy data for the database.
-- Run `php artisan migrate:fresh --seed` or `source seed.sh` if you want to regenerate fresh new dummy data.
-- The generated dummy data are random latin words. If you want english dummy data that makes sense, you can import **database/dump/test.sql**
+Update `.env` file to match your database.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=taskmanager
+DB_USERNAME=root
+DB_PASSWORD=
+```
+Run `php artisan migrate --seed` to generate dummy data for the database.<br>
+Run `php artisan migrate:fresh --seed` or `source seed.sh` if you want to regenerate fresh new dummy data.<br>
+The generated dummy data are random latin words. If you want english dummy data that makes sense, you can import ***database/dump/test.sql***
+```
+mysql -u root -p taskmanager;
+source database/dump/test.sql;
+```
 
 ## Task Manager Usage
 
