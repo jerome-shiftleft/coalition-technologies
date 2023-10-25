@@ -21,7 +21,7 @@ APP_NAME=coalition-technologies
 APP_ENV=local
 APP_KEY=base64:6fNrr8goMgRlbftn4riYNwUTe/8HXQ3jzCHuKTEolgk=
 APP_DEBUG=true
-APP_URL=https://coalition-technologies.local
+APP_URL=https://taskmanager.local
 ```
 Install composer and node module packages by running the following commands.
 ```
