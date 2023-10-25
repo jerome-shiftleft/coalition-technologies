@@ -47,7 +47,7 @@ $(function () {
 
     var task = $(this).closest('.task');
     //var project_id = $('#select-project').val();
-    var project_id = parseInt(task.data('project-id'));
+    var project_id = task.data('project-id');
     var id = parseInt(task.data('id'));
     var title = task.find('.task-title').text();
     var description = task.find('.task-content').text();
@@ -73,7 +73,7 @@ $(function () {
   $(document).on('submit', '#update-task-form', function (e) {
     e.preventDefault();
     var id = parseInt($('#update-task-id').val());
-    var new_project_id = parseInt($('#update-project-id').val());
+    var new_project_id = $('#update-project-id').val();
     var new_title = $('#update-title').val()
     var new_description = $('#update-description').val();
 
@@ -84,11 +84,16 @@ $(function () {
       'description': new_description
     }
 
-    console.log('task new data: ');
-    console.log(data);
-
-    Livewire.emitTo('task-manager', 'updateTask', data);
-
+    if (new_project_id === '0' || new_project_id.trim() === '' || new_title.trim() === '') {
+      console.log('Validation error');
+      $(this).find('.validation-error').html('Please select a project and provide a title.')
+      $('#create-task-btn').prop('disabled', false);
+    } else {
+      console.log('Valid form data');
+      console.log('task new data: ');
+      console.log(data);
+      Livewire.emitTo('task-manager', 'updateTask', data);
+    }
   }); // end of $('#update-task-form').on('submit', function (e)
 
   window.addEventListener('selectProject', event => {
