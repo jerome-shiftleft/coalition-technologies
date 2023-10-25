@@ -18,6 +18,10 @@ This is **required** if you want to use **browsersync**
 - Run `php artisan migrate:fresh --seed` or `source seed.sh` if you want to regenerate new dummy data.
 - The generated dummy data are random latin words. If you want english dummy data that makes sense, you can **import database/dump/test.sql**
 
+## Task Manager Usage
+- Select Project
+<img src="public/images/screenshots/select-project.jpg" alt="Select Project" style="display:block; width: 100%; max-width: 360px" />
+
 ## Compiling Assets (Laravel Mix)
 
 **`npm run dev`** compiles assets for development. Generates source maps for better debugging.<br><br>
