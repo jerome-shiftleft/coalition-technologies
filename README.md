@@ -102,6 +102,21 @@ If **`BROWSER_SYNC=true`** in .env, it will automatically reloads the browser af
 - public/js/app.js.LICENSE.txt
 - public/js/vendor.js.LICENSE.txt
 
+## Code Review
+This project utilized laravel mix and laravel livewire.
+Here are the location of some important files/folders.
+
+entry page: ***/resources/views/dashboard/index.blade.php***<br>
+layout: ***/resources/views/layouts/dashboard.blade.php***
+
+livewire classes: ***/app/Http/livewire***<br>
+livewire views: ***/resources/views/livewire***
+
+js files: ***/resources/js***<br>
+sass files: ***/resources/sass***
+
+laravel mix config: ***/webpack.mix.js***
+
 ## Additional Packages Installed
 
 ### Composer Packages
