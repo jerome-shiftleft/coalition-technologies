@@ -1,8 +1,10 @@
 # Task Manager
 
+**Note:** Please view this readme in [github](./) so you can view the embedded images
+
 ## Installation
 
-- Download/clone this repository
+- Download/clone this [repository](./)
 - Copy .env.example **`cp .env.example .env`**
 - Update `.env` file. Change `APP_URL` to match your virtual host url.<br>
 This is **required** if you want to use **browsersync**
